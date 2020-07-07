@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js数据类型：
+        // 基本数据类型
+        // Number
+        // String
+        // Boolean
+        // Null
+        // Undefined
+        // Symbol
+        // 引用数据类型
+        // Object
+        // Object
+        // Array
+        // RegExp
+        // Math
+        // Date的实例
+        // Function
+        // 普通函数
+        // 类
+
+        // 
+        // Number
+        // String
+        // Boolean
+        // Null
+        // Undefined
+        // Symbol
+        // Object
+
+        // js中万物都是对象
+
+
+
+        // typeof  instanceof constructor  Object.prototype.toString.call
+
+        // toString.call()
+        // delete
+
+        // parseFloat('123')
+
+        // let str = 1;
+        // console.log(Object.prototype.toString.call('1'));
+
+        // 基本值直接存储的是值  引用值存储的空间地址
+        // 形参  arguments   ...arg
+        // [...arguments].forEach()
+
+        // function fn() {
+        //     // console.log([...arguments]);
+        //     let ary = [100,200,300,400]; // af0
+        //     let ss = [...ary]; // af1
+        //     console.log(ary == ss);
+        // }
+        // fn(100, 200, 300, 400)
+        // setTimeout setInterval
+
+        document.getElementById('div1');
+        document.getElementsByClassName('box')[0] // [div]
+        document.querySelector('.box')
+
+        // let box = 'box';
+        // document.getElementsByClassName(box);
+
+        // let p = document.createElement('p');
+        // document.body.appendChild(p);
+        // previousSibling
+        // substr substring slice
+        // replace
+
+        //push ary[ary.length] = xxx  ary.splice(ary.length,0,xxx)
+        // forEach map   
+        // ary.sort(function(a,b){return a-b})
+        // ary.sort((a,b)=> a-b)
+
+        // 实现找到第n项到第m项(包括第n项和第m项)的内容，返回一个新的数组(原有数组不变)
+        // let ary = [100,200,300,400]
+        //      第二项   第四项
+        // ary.slice(n-1,m-1+1)
+
+
+        //Math.round(Math.random()*(m-n)+n)
+
+        // []==false:___3__            ![]==false：__4__  
+        0 == 0 //true                  // false == false  // true
+
+        // var val=“3px”+3 ? “ok”: “no”;  val存储的值是多少：__'ok'__
+
+
+        // '3px'+3 ? 'ok': 'no'
+        // console.log('3px' + 3 ? 'ok' : 'no');
+
+        // function sum(...arg) {
+        //     let total = null;
+        //     ary.forEach(function(item, index) {
+        //         // var cur = Number(item);
+        //         item = Number(item);
+        //         if (!isNaN(item)) {
+        //             total += item
+        //         }
+        //     })
+        //     return total
+        // }
+        // let res = sum(1, 2, 3, NaN, undefined);
+        // console.log(res);
+        // let total = null
+
+        // function fn(num) {
+        //     if (num > 100) {
+        //         return 0;
+        //     }
+        //     if (num % 15 === 0) {
+        //         return num + fn(num + 1);
+        //     }
+        //     return fn(num + 1);
+        // }
+        // fn(1);
+        // 求1到100的数的能够被3和5整除的数的和
+
+
+        2e25
+        // let str = '123456789asdfghjkASDFGHJ';
+        // let value = '';
+
+        // function createCode() {
+        //     // 0 str.length-1
+        //     for (var i = 0; i < 4; i++) {
+        //         let index = Math.round(Math.random() * (str.length - 1 - 0) + 0)
+        //         value += str[index];
+        //     }
+        //     show.innerHTML = value;
+        //     value = '';
+        // }
+
+
+
+
+        // let list = document.querySelectorAll('#ul1>li');
+        // for (var i = 0; i < list.length; i++) {
+        //     if (i % 2 === 0) {
+        //         // list[i].color = 'pink'
+        //         list[i].style.background = 'pink'
+        //     } else {
+        //         // list[i].color = 'green'
+        //         list[i].style.background = 'green'
+        //     }
+        //     list[i].color = list[i].style.background;
+
+        //     list[i].onmouseover = function() {
+        //         this.style.background = 'orange'
+        //     }
+        //     list[i].onmouseout = function() {
+        //         this.style.background = this.color
+        //     }
+        //     list[i].index = i + 1;
+        //     list[i].onclick = function() {
+        //         alert(`我是第${this.index}个li`)
+        //     };
+        // }
+    </script>
+</body>
+
+</html>

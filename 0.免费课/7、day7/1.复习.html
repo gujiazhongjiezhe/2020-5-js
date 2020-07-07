@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数
+        // 函数创建
+        // 形参
+        // arguments：实参集合
+        // return
+        // 函数执行
+        // 实参
+
+        // 匿名函数
+        // 函数表达式
+        // 自执行函数
+
+        // function fn(){}
+        // var fn = function(){}
+        // fn()
+
+        // var btn = {
+        //     onclick:null
+        // }
+        // btn.onclick = function(){}
+
+        // (function(形参){})('实参')
+        // (function(){}())
+        // +function(){}()
+
+
+
+
+        // for (var i = 0; i < 100000; i++) {
+
+        // }
+        // console.log(111);
+
+        // function fn() {
+        //     arguments.push(100);
+        //     console.log(arguments);
+
+        // }
+        // fn(1, 2, 3);
+
+        /* 
+        shift unshift push pop splice  :push用的是最多的
+        slice concat                   :slice concat
+         */
+
+        //  splice:返回值是一个新数组，数组里的内容就是删除的那几项
+        // 如果不传参就是什么都不干
+        // 如果传一个参n， 就是从索引n删除到末尾，
+        // 如果传两个参n， m： 从索引n开始删除m个
+        // 如果传两个参n， m， x： 从索引n开始删除m个， 用x进行替换
+        // n, 0, x: 从索引n开始删除0个， 把x放到索引n的前面
+        // let ary = [100,200,300,400];
+        // ary.splice(0,1)
+        // ary.splice(0,0,x,x,x)
+        // ary.splice(ary.length,0,x)
+        // ary.splice(ary.length-1)
+
+        // slice:不会改变原数组，但是会返回一个新的数组，数组里存放的就是截取的内容
+        // 如果不传参就是克隆
+        // 如果传一个参n，就是从索引n截取到末尾，
+        // 如果传两个参n， m：从索引n开始截取到索引m，但是不包括索引m对应的那一项
+        let ary = [100, 200, 300, 400];
+        // 我想从从索引n截取到索引m(包含m对应的那一项)
+        // ary.slice(n,m+1)
+        // console.log(ary.slice(3, 0)); // []
+
+
+        // concat:不会改变原数组，但是会返回一个新的数组，数组里的内容是新数组和老数组拼接到一起的内容
+        // console.log(ary.concat([600, 700, [800]], true, false)); // [100, 200, 300, 400,600,700]
+    </script>
+</body>
+
+</html>

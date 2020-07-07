@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        js引用值之普通对象Object
+        任何一个对象都是拿大括号进行包裹,而且里边存放的是0到多组键值对，每一组键值对之间拿逗号分隔,每一个键值对由属性名和属性值组成,
+        属性名的类型是字符串或者数字,
+        属性值是js数据类型的任意一种
+        */
+
+        // let person = {
+        //     name:'linPeng',
+        //     age:18,
+        //     sex:'boy',
+        //     hobby:'girl',
+        //     isMoney: true,
+        //     2:'1111',
+        //     name:'ssss' // 如果属性名重复，下面的会覆盖上面的
+        // };
+        // console.log(person);
+
+        // 对象的增删改查
+        // 查：获取对象中属性名对应的属性值
+                // 对象名.属性名
+                // 对象名['属性名']
+                // 如果属性名是数字，那只能用 对象名['属性名']  去获取 
+            // console.log(person.name); // 'linPeng'
+            // console.log(person['name']);
+
+            // console.log(person.age); // 18
+            // console.log(person[2]); // '1111' 加不加引号都可以
+
+        // 增：给对象新增键值对
+            // 对象名.属性名 = xxx
+             // 对象名['属性名'] = xxx
+
+            // person.friend = 'laowang';
+            // person['friend'] = 'laowang';
+            // console.log(person);
+
+        // 改：修改对象中属性名对应的属性值
+            // person.name = 'monkey';
+            // console.log(person);
+
+        // 删除键值对
+            // 假删除
+                // person.name = null;
+                // console.log(person);
+
+            // 真删除
+                // delete 对象名.属性名
+                // delete person.name
+                // console.log(person);
+            //-----------------------------------------------------
+            let num = 100;
+            let str = 'age'
+            let obj = {
+                name:1,
+                age:2,
+                sex:num
+            }
+
+            console.log(obj.sex); // 100
+            console.log(obj[str]); // obj['age'] // 2
+           
+
+            console.log(obj['str']); // undefined
+            // 获取对象中属性名对应的属性值获取不到，那就是unedfined
+
+
+            // 数组  null undefined  基本值和引用值的区别
+            // 元素也是对象  js中的逻辑运算符  数据类型比较
+            
+            
+            
+                
+             
+            
+
+        
+        
+        
+      
+        
+        
+        
+
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #box {
+            width: 800px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: orangered;
+            margin: 50px auto;
+            font-size: 20px;
+            font-weight: 500;
+            background: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        // 电子表
+        let box = document.getElementById('box');
+
+
+        function addZero(value) {
+            // value  -->7
+            if (value < 10) {
+                return '0' + value
+            } else {
+                return value;
+            }
+            // return value < 10 ? '0' + value : value;
+        };
+
+        function transDay(value) {
+            let obj = {
+                0: '星期日',
+                1: '星期一',
+                2: '星期二',
+                3: '星期三',
+                4: '星期四',
+                5: '星期五',
+                6: '星期六'
+            };
+            // 映射表
+            return obj[value];
+        }
+
+
+
+        // 创建一个产生时间的方法
+        function createTime() {
+            let time = new Date(),
+                year = time.getFullYear(),
+                month = time.getMonth() + 1,
+                date = time.getDate(),
+                day = time.getDay(),
+                hour = time.getHours(),
+                min = time.getMinutes(),
+                sec = time.getSeconds();
+
+            let res = addZero(year) + '年' + addZero(month) + '月' + addZero(date) + '日' + ' ' + addZero(hour) + '时' + addZero(min) + '分' + addZero(sec) + '秒' + ' ' + transDay(day);
+
+            box.innerHTML = res;
+        }
+        createTime(); // 防止页面初次渲染的时候，页面前一秒没有时间的情况
+        setInterval(createTime, 1000);
+    </script>
+</body>
+
+</html>

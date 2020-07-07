@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // queryUrlParams
+        let url = 'https://www.baidu.com:5050?wd=汽车&name=erYa&age=18#index'
+
+        // let obj = {
+        //     wd:'汽车',
+        //     name:'erYa',
+        //     age:'18'
+        //     hash:'index'
+        // }
+
+        function queryUrlParams(url) {
+            // 1、从url中截取出参数部分
+            // 把url以问号作为分隔符转化成数组，然后获取数组的第二项
+            // 先获取问号的索引，然后在进行字符串截取
+            let queryStr = url.split('?')[1]; // 'wd=汽车&name=erYa&age=18'
+            // console.log(queryStr);
+
+            // 把每一组参数分开
+            let queryAry = queryStr.split('&'); // ["wd=汽车", "name=erYa", "age=18"]
+            console.log(queryAry);
+
+            let obj = {} // 创建一个对象，用来接收键值对
+            for (var i = 0; i < queryAry.length; i++) {
+                // 当第一次循环的时候
+                // i=0
+                // queryAry[i] --> "wd=汽车"   "name=erYa"  "age=18"
+                var item = queryAry[i].split('='); // ['wd','汽车']  ['name','erYa']  ['age','18']
+                obj[item[0]] = item[1]; // 给obj新增键值对
+                // obj['wd'] = '汽车'
+                // obj['name'] = 'erYa'
+                // obj['age'] = '18'
+            };
+            // console.log(obj);
+            return obj;
+        }
+        // 核心思想：不断的细化，知道细化到每一个参数的属性名和属性值能够单独获取即可
+
+        console.log(queryUrlParams(url));
+
+
+        // Math数学对象  随机验证码
+    </script>
+</body>
+
+</html>

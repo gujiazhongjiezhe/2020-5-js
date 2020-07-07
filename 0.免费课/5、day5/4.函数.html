@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">111</div>
+    <div id="bix">222</div>
+    <script>
+        // Number(true)
+        // 函数的定义：函数就是方法，可以把实现某个功能的代码封装到一起，以后你想使用这个功能，就直接让这个函数执行就好了
+        // 减少代码的冗余，提高代码的复用率(高内聚，低耦合)
+
+        // 求和
+
+        // let num1 = 12;
+        // let num2 = 13;
+        // let total = num1+num2;
+        // total = total/2
+
+
+        //     function fn(num1,num2) { // 形参变量
+        //         console.log(num1,num2);
+
+        //         let total = num1 + num2;
+        //         total = total / 2;
+        //         console.log(total);
+        //         return total;   
+        //     }
+
+        //     // 函数名+() // 函数执行时小括号里放的是实参
+        //    console.log( fn(12,13)) ;
+
+        //     // console.log(total);
+        //     // 函数可以无限制的执行，而且每一次执行相互之间都是独立的
+        //     // 当函数执行的时候，函数里的所有代码会从上往下执行一遍
+
+        //     isNaN(true)
+        //     console.log(isNaN);
+        //     console.log(fn);
+        //------------------------------------------
+        // 函数的形参和实参
+        // function fn(n,m,x){
+        //     // 形参和实参是一一对应的
+        //     console.log(n,m,x); // 1 2 un
+        //     // 函数里实参不给形参赋值，那输出形参的值就是undefined
+
+        // }
+
+        // fn(1,2);
+        // fn() // 函数里的n，m，x都是undefined
+        // fn(1,2,3,4) // 实参4传不到函数里去，因为没有第四个形参接受
+
+
+
+        // let a;
+        // console.log(a); // un
+
+        //---------------------------------------------------------------------
+
+        // 函数的返回值
+
+        // function fn(n,m){
+        //     let a = 100;
+        //     let total = n+m;
+        //     total = total/2;
+        //     // return total;
+        //     return
+        //     // 把函数的返回结果return出去，谁执行的函数谁就接收
+        //     // 如果函数不写return，那函数的执行结果就是undefined
+        //     // 如果函数只有return，但是后边没有跟任何东西，那函数的执行结果就是undefined
+
+
+
+        // }
+
+        // // console.log(  fn(1,2));
+        // let res = fn(1,2); // 你return啥，函数的执行结果就是啥
+        // console.log(res);
+
+
+        // console.log(total); // total is not defined
+
+
+        //--------------------------------------------------------------
+        // function fn() {
+        //     console.log(100);
+        //     return 200;
+        //     console.log(300); 
+        // }
+        // fn()
+
+    // 函数的return：
+        // 1、把函数的返回值return出去
+        // 2、return下面的代码不在执行
+
+        // for(var i=0;i<3;i++){
+        //     break;
+        //     console.log(i);
+            
+        // }
+
+        //----------------------------------
+        // 出现undefined和null的情况
+        // 1、获取对象里的属性名对应的属性值，获取不到，那就是undefined
+        // 2、创建一个变量，但是不给他赋值，那输出他的值就是undefined
+        // 3、函数里实参不给形参赋值，那形参的值就是undefined
+        // 4、函数里没有return，那函数的执行结果就是undefined
+
+        // 出现null的情况
+        // 1、创建一个变量，咱们可以给他手动赋值为null
+        // 2、如果通过id名获取元素获取不到，那就是null
+
+        // let box = document.getElementById('bix');
+        // console.dir(box);
+
+        // let a = null;
+
+
+        //--------------------------------------------------
+        // 函数执行时，在函数里边可以拿到函数外边的东西，但是函数外边拿不到函数里边的东西
+
+        // let num = 10;
+        // // 外边就是大街上的公共厕所
+
+        // function fn(){
+        //     let s = 100;
+        //     // let num = 3;
+        //     console.log(num); // 3
+        //     // 函数就是你家私有厕所
+            
+        // }
+        // fn();
+        // console.log(s); // 报错
+
+
+        // let num = 12;
+        // function fn(num){ // 10 11 12
+        //     num++;
+        //     return num++; /// 11
+        //     --num
+        // };
+        // let f = fn(10); // 11
+        // console.log(f); // 11
+        // console.log(num); // 12
+        
+        
+        
+
+        // 函数每一次执行都是独立的
+//--------------------------------------
+// 函数的执行过程
+
+    //     function fn(n,m){
+    //         let total = n+m;
+    //         return total;
+    //     }
+
+    //    let f =  fn(1,2);
+    //    console.log(f);
+
+//-----------------------------------------------------------
+    // function fn(n,m,x){
+    //     let total = n + m +x;
+    //     return total;
+    // }
+
+    // let res = fn(1,2,3);
+    // // 我想求任意个数的和
+    // console.log(res);
+
+
+
+    // function fn(){
+    //     console.log(arguments); // 实参集合，里边可以拿到用户执行函数时传递的所有实参
+    //     var total = 0; // 创建一个值用来累加值
+    //     for(var i=0;i<arguments.length;i++){
+    //         // console.log(arguments[i]);
+    //         var cur = arguments[i];  // 代表实参的每一项
+    //         total+= cur; // 把每一个实参累加给total
+    //     }
+    //     return total;
+         
+    // }
+
+    // let res = fn(1,23,2,69);
+    // // 我想求任意个数的和
+    // console.log(res);
+
+    // 我想实现任意数据类型的值的求和
+
+    // function fn(){
+    //     let total = null;
+    //     for(var i =0;i<arguments.length;i++){
+    //         var cur = Number(arguments[i]); // 代表每一个实参
+    //         // 把每一个实参转换成数字
+    //         // 然后在判断当前转换的数字是不是NaN，如果不是NaN就正常累加， 如果是就直接略过
+    //         if(!isNaN(cur)){
+    //             total += cur;
+    //         }
+
+    //     }
+    //     return total
+
+    // }
+
+    // let f = fn(true,NaN,undefined,'100',false) // 101
+    // console.log(f);
+
+
+// 这种方式如果有字符串就不好使了
+    // function fn(){
+    //     let total = null;
+    //     for(var i =0;i<arguments.length;i++){
+    //         if(!isNaN(arguments[i])){
+    //             total += arguments[i];
+    //         }
+    //     }
+    //     return total
+
+    // }
+
+    // let f = fn(true,NaN,undefined,'100',false) // 101
+    // console.log(f);
+    
+    
+       
+
+
+        
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            border: 1px solid black;
+            height: 400px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        li {
+            line-height: 30px;
+            background: red;
+            margin-top: 3px;
+        }
+
+        #box {
+            width: 500px;
+            /* height: 50px; */
+            margin: 0 auto;
+        }
+
+        #text {
+            margin-left: 100px;
+            height: 30px;
+            width: 300px;
+        }
+
+        #btn {
+            height: 30px;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="note">
+            <!-- <li>ssss</li> -->
+        </ul>
+        <input type="text" id="text"><button id="btn">增加</button>
+    </div>
+    <script>
+        // 想操作谁就获取谁
+        let note = document.getElementById('note');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+
+        // 在input框输入内容，当点击btn按钮的时候，
+        // 生成一个li标签，然后把input框的内容放到li标签里，并且把li插入到ul里
+        btn.onclick = function(){
+            // 获取input的内容，表单元素的内容用value获取和设置
+            let textValue = text.value;
+            // 获取当前input框的内容，value等价于咱们的innerHTM和innerText
+            // 如果用户没有输入内容，那获取的textValue就是空字符串
+            if(!textValue){
+                alert('当前内容不能为空，青重新输入');
+                return;
+            }
+        
+            // console.log(textValue);
+            note.innerHTML += '<li>'+ textValue +'</li>'
+            // '<li>456</li>'
+            // note.innerHTML = note.innerHTML +'<li>1111</li>'
+            // 在之前基础之上累加一个里标签
+            text.value = '';
+
+            let list = document.getElementsByTagName('li');
+            for(var i=0;i<list.length;i++){
+                if(i%2 === 0){
+                    list[i].style.background = 'pink';
+                }
+                else {
+                    list[i].style.background = 'green';
+                }
+            }
+            
+            
+        }
+
+
+
+    </script>
+</body>
+
+</html>

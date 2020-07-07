@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基本数据类型
+        //     Number NaN 有效数字
+        //     String  '' "" ``
+        //     Boolean true false
+        //     Null  null
+        //     Undefined undefined
+        //     Symbol
+        // 引用数据类型
+        //     Object
+        //         Object普通对象 {}
+        //         Array数组 []
+        //         Math数学对象
+        //         Date的实例
+        //         RegExp正则
+        //     Function
+        //         Function普通函数
+        //         类
+
+        // Number类
+        //     把其他数据类型转数字
+        //         Number(val)
+        //         parseFloat(val) // 可以识别一位小数点
+        //         parseInt(val) // 不可以识别小数点
+
+        //         val.toFixed(number) //返回值是一个字符串
+        //         isNaN(val) // 返回值是一个布尔值
+
+        // String类
+            val.toString()
+            String(val)
+            // 基本值直接加引号
+                // null和undefined不能直接调用toString方法
+            // 引用值转字符串
+                // 普通对象转字符串是 '[object Object]'
+                // 数组转字符串 是吧数组的每一项都去转字符串，然后在把所有的字符串和逗号拼装成一个总的字符串
+                // let ary = [1,2,{}] // '1','2','[object Object]'--->'1,2,[object Object]'
+            
+            // 四则运算
+                // 减乘除就是正常的数学运算，如果运算的值不是number类型的，要转number
+                // 如果NaN参与数学运算了，那最后的结果就是NaN
+
+            // 在加发运算过程中
+                // 正常运算
+                // 字符串拼接(加号和引号一旦相遇了就是字符串拼接)
+                    // 如果是基本值就直接拼接，不用数据类型的转换
+                    // 如果是引用值，那要转为字符串在拼接
+
+                    // [] + []// ---> '' +[] -->'' + ''-->''
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script>
+        let navList = document.querySelectorAll('button');
+
+        for (var i = 0; i < navList.length; i++) {
+            //   navList[i] // 代表每一个button
+            navList[i].index = i; // 给每一个元素增加自定义属性
+            navList[i].onclick = function() {
+                alert(this.index)
+            }
+        }
+
+        // 当for循环完成之后，当前的i已经成为3了
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            /* background: red; */
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="background: red;"></div>
+    <script>
+        // 页面中有一个元素，当点击第一次的时候从红色变为绿色，再次点击从绿色变为黄色，再次点击从黄色变为黑色，再次点击从黑色变为红色，以此来推
+        // 红--》绿--》黄--》黑--》红
+
+        // 1、想操作谁就获取谁
+        let box = document.getElementById('box');
+        console.dir(box)
+
+        ///2、给当前元素绑定点击事件
+        box.onclick = function(){
+            // 页面的元素每点击一次，当前这个函数就会执行一次，(函数里的代码也会重新执行一次)
+                // console.log(1);
+
+                // 当用户点击的时候，先拿到当前元素的颜色，然后通过判断当前的颜色进而确定要改变的颜色是啥色
+                let color = box.style.background; // 获取当前元素的背景颜色
+                console.log(color);
+                if(color == 'red'){
+                    box.style.background = 'green';
+                }
+                else if(color === 'green'){
+                    box.style.background = 'orange'
+                }
+                
+                
+              
+
+
+                
+        }
+    </script>
+</body>
+</html>

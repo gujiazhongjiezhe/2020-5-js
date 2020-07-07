@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            border-bottom: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="box">
+        <!-- <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li> -->
+    </ul>
+    <script>
+        let box = document.getElementById('box')
+            // ajax 从后台把数据请求过来
+        let ary = [{
+            name: '小狗',
+            age: 2,
+            link: 'xxxx'
+        }, {
+            name: '大狗',
+            age: 4,
+            link: 'xxxx'
+        }]; // 从后台请求来的数据
+
+        // ['<li>1</li>','<li>2</li>','<li>3</li>','<li>4</li>']
+
+        let res = ary.map(function(item, index) {
+            // return '<li>' + item + '</li>'
+            // return '<li>${item}</li>'
+            console.log(item); // 是每一个对象
+
+            return `<li>.${item.name}334456565${item.age}</li><img src=${item.link}>`
+                // es6的模板字符串${}里边可以写变量
+
+        });
+
+        res = res.join('');
+        console.log(res);
+
+        box.innerHTML = res;
+
+        console.log(res);
+
+        `.ll;l;hhhh`
+    </script>
+</body>
+
+</html>

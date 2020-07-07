@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        基本数据类型之null和undefined
+        null和undefined都代表没有
+        null：空指针对象，一般情况下都是代表意料之中的事(咱们一开始不知道他的值是多少，可以该他赋值为null，经过一系列操作之后，知道了他的值，在给他重新赋值)
+
+        let total = null;
+
+        let a = 10;
+        let b = 12;
+        total = a + b;
+
+        // 买了一辆汽车，新车时没有汽油的,单只咱们知道，买完车之后你回去加油的，当你加完油之后再给油箱重新赋值
+        let carBox = null;
+
+        carBox = 'full';
+
+        undefined:是意料之外的事，是浏览器的默认机制
+        // 孙悟空的父亲没有把，他是石头缝里出来的，
+        // 但是现在有个人去找孙悟空的父亲
+         */
+         let monkey = {
+             name:'sunWuKong',
+             deadline:null
+         }
+
+         console.log(monkey.father); // un
+         
+    </script>
+</body>
+</html>

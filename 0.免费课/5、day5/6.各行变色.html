@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        li {
+            line-height: 30px;
+            color:plum;
+            height: 30px;
+            border-bottom: 1px solid black;
+        }
+        /* ul li:nth-child(odd) {
+            background-color: green;
+        }
+        ul li:nth-child(even) {
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>佟湘玉</li>   
+            <li>白展堂</li>   
+            <li>吕轻侯</li>   
+            <li>郭芙蓉</li>   
+            <li>李秀莲</li>   
+        </ul>
+    </div>
+    <script>
+        // 1.想操作谁就获取谁
+        let list = document.getElementsByTagName('li');
+        // 通过标签名获取元素，获取的结果是一个元素集合，是一个类数组类型
+        // 有length,如果获取不到就是空的元素集合
+ 
+
+        for(var i = 0;i<list.length;i++){
+            // console.log(list[i]);// 每一个li
+            // 如果i是偶数，那对应的就是奇数行
+            // 否则就是偶数行
+            // list[i].style.backgroundColor = 'red'
+            if(i%2 ===0){
+                // 如果i%2等于0成立，说明当前的i是偶数，那就对应的是奇数行
+                 list[i].style.backgroundColor = 'red';
+                 // 给元素增加背景颜色
+            }
+            else {
+                list[i].style.backgroundColor = 'green';
+                // 给元素增加背景颜色
+            }
+
+            // 方法一
+            list[i].bgc = list[i].style.backgroundColor;
+            // 给每一个元素增加一个自定义属性，其属性值是当前元素的背景颜色
+            console.log(list[i])
+
+            // 给每一个li绑定鼠标输入和输出事件
+            list[i].onmouseover = function(){
+                // console.log(1);
+                // 当鼠标输入的时候，改变当前元素的背景颜色
+                // this // 你当前操作的是哪个元素，那this就是谁
+                // console.log(this);
+                // 给当前鼠标输入的元素改变背景颜色
+
+
+                // 方法二
+                // this.bgc = this.style.backgroundColor;
+                // 给当前元素增加一个键值对，键值对的属性值是当前元素的背景颜色(把当前元素的背景颜色存储到自己身上)
+                // console.dir(this);
+                this.style.backgroundColor = 'orange';  
+
+            }
+
+            list[i].onmouseout = function(){
+          
+                this.style.backgroundColor = this.bgc;
+                // 当鼠标划出的时候把之前存储到元素身上的背景颜色拿过来重新进行赋值
+
+                
+            }
+        }
+
+
+        // 复习免费课讲的所有知识
+        // 选项卡明天自己看视频，
+        // 一会课下我会出一个小demo作为练习
+     
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="father">
+        <p id="p">111111 </p>
+        <button id="btn">点击</button>
+    </div>
+    <input type="text" id="input">
+    <script>
+        // document.createElement('标签名')：在js中动态创建元素节点
+        // document.createTextNode('内容'): 在js中动态创建文本节点
+        // 父节点.appendChild(节点)：把指定的节点插入到父节点的末尾
+        // 父节点.removeChild(节点)：移除节点
+
+
+        let div = document.createElement('div');
+        // 动态生成div元素节点
+        // div.innerHTML = '111'; // 给div元素新增内容
+        // console.log(div);
+        let text = document.createTextNode('123456');
+        // 动态生成文本节点
+        // console.log(text);
+
+        div.appendChild(text); // 把文本节点插入到div元素节点的末尾
+
+        // 我想把div放到body的末尾
+        document.body.appendChild(div); // 把div元素插入到body的末尾
+
+        btn.onclick = function() {
+            let p = document.getElementById('p');
+            // console.log(this.parentNode);
+            // this.parentNode.removeChild(p)
+            document.body.removeChild(father)
+        }
+        input.onblur = function() {
+            console.log(1);
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, .5);
+            margin: 200px auto;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        我们是广告
+        <button id="btn">点击关闭</button>
+    </div>
+    <!-- <button id="btn">点击</button> -->
+    <script>
+        // 定时器：设置一个时间，当到达了规定的时间以后去做什么事
+        // 设置定时器有两种 setTimeout  setInterval
+        // setTimeout：一次性的定时器，只能执行一次
+        // setInterval：是一个周期性的定时器，每间隔一段时间，就会执行一次
+
+        // 定时器的参数：第一个参数是函数，第二个参数是单位为毫秒的时间
+
+        // 清空定时器：clearTimeout(定时器的返回值)
+        //            clearInterval(定时器的返回值)
+
+        // 定时器的返回值：是一个数字，代表了当前定时器在页面中的位置
+
+
+
+        // let a = setTimeout(function() {
+        //     console.log(1);
+        //     // 经过5秒钟之后，此处的函数才会执行
+        // }, 5000);
+        // // console.log(a); // 1
+
+
+        // setInterval(function() {
+        //     console.log(1);
+        //     // 间隔2秒就会执行一次此函数
+        // }, 2000);
+        // console.log(2);
+
+        //--------------------------------------
+        // 定时器的返回值：是一个数字，代表了当前定时器在页面中的位置
+        // let a = setTimeout(function(){console.log(1);},2000);
+
+        // let b = setTimeout(function(){console.log(2);},2000);
+
+        // let c = setInterval(function() {
+        //     console.log(3);
+        // }, 2000);
+
+        // // console.log(a, b, c); // 1 2 3
+
+        // btn.onclick = function() {
+        //     clearInterval(c)
+        // }
+        // let box = document.getElementById('box');
+        // let btn = document.getElementById('btn');
+        // setTimeout(function() {
+        //     box.style.display = 'block';
+        // }, 10000);
+        // btn.onclick = function() {
+        //     box.style.display = 'none';
+        // }
+
+
+        // setTimeout(function(num) {
+        //         console.log(num);
+        //     }, 1000, 600)
+        //     // 传的第三个参数，是回调函数的实参
+    </script>
+</body>
+
+</html>

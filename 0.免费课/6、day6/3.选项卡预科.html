@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>第一个</button>
+    <button>第二个</button>
+    <button>第三个</button>
+    <script>
+        let btnList = document.getElementsByTagName('button');
+        // [button,button,button];
+        // for(var i=0;i<btnList.length;i++){
+        //     // console.log(btnList[i]); // 每一个button按钮
+        //     btnList[i].onclick = function(){
+        //         // 当点击的时候弹出当前button的索引
+        //             alert(i);
+        //     }  
+        // }
+
+
+        for(var i=0;i<btnList.length;i++){
+            // console.log(btnList[i]); // 每一个button按钮
+            btnList[i].index = i; // 给每一个按钮增加一个自定义属性，其属性名是index，属性值是当前的i值(把i值存储到自己身上)
+            btnList[i].onclick = function(){
+                // 当点击的时候弹出当前button的索引
+                    alert(this.index);
+                    // this:当前操作的是谁，this就是谁，
+            }  
+            // console.dir(btnList[i])
+        }
+
+
+        // 当for循环执行的时候，这会受页面还没有渲染出来
+        // 当用户点击button的时候，页面的代码早已全部执行完(包括for循环)
+        // 当for循环执行的时候，函数不可能执行
+
+        /* 
+        var i  = 0   3
+
+        i = 0
+           btnList[0].index = 0;
+           btnList[0].onclick = function(){
+                    alert(i); // 3
+            }  
+        
+        i=1
+          btnList[1].index = 1;
+          btnList[1].onclick = function(){
+                    alert(i); // 3
+            } 
+
+        i=2
+          btnList[2].index = 2;
+          btnList[2].onclick = function(){
+                    alert(i); // 3
+            } 
+
+        i = 3
+         */
+         // 页面渲染(代码执行的过程)-->用户才会看见页面的按钮，这时候才会产生点击行为，当点击的时候页面已经渲染完了(代码早就执行完了)，此时的i是3，所以不管你点击的是哪个按钮，输出的都是3
+
+    </script>
+</body>
+</html>

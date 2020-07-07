@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <!-- <script>
+        // let box = document.getElementById('box');
+        // console.log(box);
+        // 如果把js代码放到最上方，有时候会获取不到页面的dom元素，因为此时的dom元素还没有被加载
+        window.onload = function() {
+            // 当页面的代码全部加载完成之后，才会执行此函数
+            let box = document.getElementById('box');
+            console.log(box);
+        }
+    </script> -->
+</head>
+
+<body>
+    <div id="box">1111</div>
+    <script>
+        // charAt chatCodeAt
+        // substr substring slice
+        // split replace(n,m) // n是老的值，m是新值，m把n给替换
+        // replace默认只能替换第一个，replace(/n/g,m)
+        // toLowerCase  toUpperCase
+        // trim trimLeft trimRight
+        // indexOf lastIndexOf includes concat
+        // let str = 'ee e e';
+
+        // 'a' > 'b'
+    </script>
+    <script src="./index.js">
+        console.log(123);
+        // 如果script的行间有src属性，那这个标签里就不能写js代码了，写上之后是不起作用的
+    </script>
+    <script>
+        let url = 'https://www.baidu.com:8000?name=erYa&age=18&word=电话#index';
+
+        function queryUrlParams(url) {
+            // 1.提取字符串里的参数
+            // let paramsStr = url.split('?')[1];
+
+            let paramsIndex = url.indexOf('?') // 当前问号的索引
+            let hashIndex = url.indexOf('#'); // 获取#号的索引
+
+            let paramsStr = url.slice(paramsIndex + 1, hashIndex);
+            let hash = url.substring(hashIndex + 1);
+            console.log(paramsStr, hash); // 'name=erYa&age=18&word=电话'  'index'
+
+            let paramsAry = paramsStr.split('&'); // ['name=erYa','age=18','word=电话']
+            let obj = {};
+            for (var i = 0; i < paramsAry.length; i++) {
+                var cur = paramsAry[i]; // 代表数组的每一项  'name=erYa'
+                var item = cur.split('='); // ['name','erYa']
+                obj[item[0]] = item[1];
+            };
+            obj['hash'] = hash;
+            return obj;
+
+
+            // let item = paramsAry[0] // 'name=erYa'
+            // let itemAry = item.split('='); // ['name','erYa']
+            // obj[itemAry[0]] = itemAry[1]
+            // // obj['name'] = 'erYa
+        }
+
+        console.log(queryUrlParams(url));
+    </script>
+
+</body>
+
+</html>

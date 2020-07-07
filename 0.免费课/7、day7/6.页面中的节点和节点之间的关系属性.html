@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <!-- 123 -->
+        1111
+        <span>567</span>
+    </div>
+    <ul id="ul">
+        <span></span>
+        <!--  -->
+
+        <!--  -->
+        <li id="a">
+
+        </li>
+    </ul>
+    <script>
+        //节点和节点之间的关系属性
+
+        // 元素对象
+        // 整个页面都是节点组成的
+        // 目前咱们用的最多的元素其实是节点的一种，叫做元素节点
+        // 整个页面就是节点组成的，然而节点都是对象数据类型的
+
+        // let box = document.querySelector('#box');
+        // console.log(box.childNodes);
+
+        // 节点名称                            nodeType    nodeName    nodeValue
+
+        // 元素节点   标签                       1        大写大标签名   null
+        // 文本节点   内容 空格 回车(换行)        3          '#text'     内容
+        // 注释节点   注释节点                   8          '#comment'   内容
+        // 文档节点   document                  9          '#document'  null
+
+
+        var ul = document.getElementById('ul');
+        // 获取单个的节点，如果获取不到就是null
+        // 如果是获取多个的，获取不到就是一个空节点集合[]
+
+        // 节点之间的关系属性
+        // 1、childNodes：获取所有的子节点
+        // 2、children：获取所有的元素子节点 (IE8及不兼容)【会把注释节点当做元素节点来识别】
+        // 3、firstChild：获取第一个子节点
+        // 4、lastChild：获取最后一个子节点
+        // 5、firstElementChild：获取第一个元素子节点(IE8及不兼容)
+        // 6、lastElementChild：获取最后一个元素子节点(IE8及不兼容)
+
+        // 7、previousSibling:获取上一个哥哥节点
+        // 8、nextSibling:获取下一个兄弟节点
+
+        // 9、 previousElementSibling:获取上一个哥哥元素节点(IE8及不兼容)
+        // 10、nextElementSibling:获取下一个兄弟元素节点(IE8及不兼容)
+
+        // parentNode:获取父亲节点
+
+
+
+        let a = document.getElementById('a');
+        // console.log(ul.childNodes);
+        // console.log(ul.children.length);
+        // console.log(ul.firstChild);
+        // console.log(ul.lastChild);
+        // console.log(ul.firstElementChild);
+        // console.log(a.previousSibling);
+        // console.log(a.previousElementSibling);
+        console.log(a.parentNode.parentNode.parentNode.parentNode.parentNode);
+        // body-->html-->docuemnt-->null
+    </script>
+</body>
+
+</html>

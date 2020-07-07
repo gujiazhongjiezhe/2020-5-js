@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            width: 200px;
+            height: 200px;
+            background: greenyellow;
+        }
+        
+        .f {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="a b c d">
+        222
+        <span>1111</span>
+    </div>
+    <script>
+        /* 
+                                                                                                                                                                                                                                                                                                                                                            节点.cloneNode(布尔值)
+                                                                                                                                                                                                                                                                                                                                                        */
+
+
+        // let box = document.getElementById('box');
+        // let ss = box.cloneNode(true);
+        // // 如果克隆的时候不穿参，或者传false就是浅克隆
+        // // 如果克隆的时候穿参true，就是深克隆
+        // console.log(ss);
+
+        //---------------------------------------------------
+        let box = document.getElementById('box'); // 获取的值是一个元素对象
+        box.ss = 123456; // 这种是把属性增加到元素的堆内存中
+        // console.log(box.ss); // 获取
+
+        // console.dir(box)
+        // setAttribute('属性名',value)：设置行间属性
+        // getAttribute('属性名')：获取行间属性
+        // removeAttribute('属性名')：移除行间属性
+        // 他们三个都是控制的行间属性
+
+        // box.setAttribute('sex', 456); // 放到当前元素的结构上了(行间)
+        // console.log(box.getAttribute('sex'));
+        // // 如果是用setAttribute设置的，就必须用getAttribute获取
+
+        // console.dir(box)
+
+        // box.removeAttribute('sex') // 移除box的行间属性sex
+        //------------------------------------------------------------------
+        // classList
+        // box.className = 'f' // 这是用f覆盖之前的类名
+        // console.log(box.classList); // ['a','b','c','d']
+        // classList.add() // 在之前基础之上累加类名
+        // classList.remove() // 移除指定的类名
+        // classList.replace(n, m): 替换类名(n被m替换)
+
+        // box.classList.add('f')
+        // box.classList.remove('a')
+        // box.classList.replace('a', 'f') // 类名a被f替换，f会占用a的位置
+        // box.classList.toggle('t') // 之前如果有此类名就是删除，如果没有就是新增
+    </script>
+</body>
+
+</html>

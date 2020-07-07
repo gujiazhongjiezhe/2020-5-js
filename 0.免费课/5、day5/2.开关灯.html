@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="background-color: red;"></div>
+    <script>
+        // 1、想操作谁就获取谁
+        let box = document.getElementById('box');
+        console.log(box);
+        box.onclick = function(){
+            // 每点击一次，当前onclick对应的属性值就会执行一次(函数就会执行一次)
+            let  color = box.style.backgroundColor; // 通过js里的style获取的样式是字符串类型的
+            if(color == 'red'){
+                box.style.background = 'orange'
+            }
+            else if(color == 'orange'){
+                box.style.background = 'green'
+            }
+            else {
+                box.style.background = 'red'
+            }
+
+
+        }
+        // red-->orange-->green-->red
+        
+        // console.log(box.style.background)输出也可以吧
+
+        let a = 12;
+
+        // if(a>0){
+        //     console.log(1);
+            
+        // }
+
+
+        // if(a>1){
+        //     console.log(2);
+            
+        // }
+
+        if(a>0){
+            console.log(1);
+            
+        }
+        else if(a>1){
+            console.log(2);
+            
+        }
+    </script>
+</body>
+</html>

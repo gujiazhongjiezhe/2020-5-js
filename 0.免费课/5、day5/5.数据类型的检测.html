@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        js中的数据类型检测
+        1
+        '4'
+        true
+
+        typeof:数据类型检测的属性
+        instanceof:检测当前实例是否属于某个类
+        constructor：基于构造函数检测当前的数据类型
+        Object.prototype.toString.call(val):检测数据类型最好的方式
+
+ 
+         */
+
+        //    typeof:数据类型检测的属性
+        // typeof val
+        // 他的返回值是一个字符串，字符串的内容就是当前的数据类型
+        // 局限性:不能够区分null、普通对象、数组，因为他们的返回值都是 'object'
+
+        // console.log(typeof 1); // 'number'
+        // console.log(typeof '1'); // 'string'
+        // console.log(typeof true); // 'boolean'
+        // console.log(typeof undefined); // 'undefined'
+
+        // console.log(typeof null); // 'object'
+
+        // console.log(typeof {}); // 'object'
+        // console.log(typeof []); //  'object'
+
+        // console.log(typeof Number(true));// 'number'
+        // console.log(typeof typeof typeof typeof typeof 1);
+        // // typeof typeof typeof typeof 'number'
+        // // typeof typeof typeof 'string'
+        // // 'string'
+        // // 只要出现两次及以上typeof，那最后的结果就是 'string'
+
+        // function fn(){}
+        // console.log(typeof fn); // 'function'
+        // console.log(typeof /^1$/); // 'object'
+        // console.dir(/^22$/);
+        
+        
+        
+        
+        
+        
+
+
+
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

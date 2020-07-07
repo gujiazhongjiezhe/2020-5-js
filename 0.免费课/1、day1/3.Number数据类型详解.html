@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // NaN和谁都不相等，包括自己
+        // console.log(1 === 1); // true
+        // console.log('1' == '1'); // true
+        
+        
+        // console.log(NaN === NaN); // false
+
+
+        // 把其他数据类型转数字 Number(val)
+            // 把字符串转数字：他的结果必须是Number类型的值
+                // 1、只要字符串中出现了非有效数字，那最后转换的结果就是NaN
+                // 2、如果是空字符串，那结果就是0
+
+        // let str=  '1';
+        // console.log(str);
+        
+
+        //   console.log(Number('1')); // 1
+        //   console.log(Number('123')); // 123
+        //   console.log(Number('123px')); // NaN
+        //   console.log(Number('12.3')); // 12.3
+        //   console.log(Number('12.3.1'));//  NaN
+        //   console.log(Number('12.3,1')); // NaN
+        console.log(Number('')); // 0
+        console.log(Number('        ')); // 0
+        
+        
+    </script>
+</body>
+</html>

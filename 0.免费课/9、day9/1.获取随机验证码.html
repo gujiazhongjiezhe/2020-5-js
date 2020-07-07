@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 300px;
+            margin: 20px auto;
+            display: flex;
+
+        }
+
+        span {
+            display: block;
+            width: 60%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid black;
+            color: orangered;
+            margin-right: 5px;
+        }
+
+        button {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            width: 30%;
+            background: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="show"></span><button id="btn">看不清</button>
+    </div>
+    <script>
+        /* 
+        1.想操作谁就获取谁
+        2.封装一个方法，用来产生随机的验证码，并且插入到span中
+         */
+
+        let show = document.getElementById('show');
+        let btn = document.getElementById('btn');
+
+        function createCode() {
+            let str = '123456789asdfghjklASDFGHJKL';
+            // 0 - str.length-1 // 想获取0到str.length-1 之间的随机整数，然后把这个随机整数作为索引去str中取值
+            let value = ''; // 创建一个空字符串，用来拼接每一次随机产生的字符
+
+            // 循环四次，产生四个随机的字符
+            for (var i = 0; i < 4; i++) {
+                let index = Math.round(Math.random() * (str.length - 1 - 0) + 0); // 生成随机的索引
+                let item = str[index]; // 通过索引去str中取值
+                value+=item; // 把获取到的值拼接给value
+            }
+
+            // console.log(value) // 咱们想要的是思四位的一个随机字符串
+            show.innerHTML = value; // 把随机生成的四位验证码插入到页面
+        }
+        createCode() // 防止页面初次渲染的时候没有东西，
+        btn.onclick = createCode;
+     
+
+        // Math.random() // 随机产生0到1之间的小数
+        // // 随机产生n到m之间的随机整数 3-6
+        // Math.round(Math.random() * (6 - 3) + 3)
+        // // 0-1   0-6  0-3   3-6
+
+        // MAth.round(Math.random()*(m-n)+n)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            /* border: 1px solid red; */
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            position: relative;
+            top: 1px;
+        }
+
+        ul li {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid black;
+            margin-right: 5px;
+            /* color:aqua; */
+        }
+
+        #box div {
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+            border: 1px solid black;
+            display: none;
+        }
+
+        ul li.active {
+            border-bottom-color: white;
+            color: orangered;
+        }
+
+        #box div.active {
+            display: block;
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="navList">
+            <li>郭芙蓉</li>
+            <li class="active">吕轻侯</li>
+            <li>邢育森</li>
+        </ul>
+        <div>他爸爸是郭巨侠</div>
+        <div class="active">他是一个算账的秀才</div>
+        <div>他是一个当差的捕头</div>
+    </div>
+    <li>4</li>
+    <script>
+
+        /* 
+        选项卡的主要逻辑：当用户点击某个li的时候，
+        1、把所有的li的类名清空
+        2、再把所有div的类名清空
+        3、给当前点击的li增加类名，再给当前点击的li所对应的div加上类名
+         */
+
+        // 想操作谁就获取谁
+        let box = document.getElementById('box'); // 获取box元素
+        let navList = box.getElementsByTagName('li'); // 获取当前三个li
+        //  console.log(navList); [li,li,li]
+        let tabList = box.getElementsByTagName('div'); // 获取三个div
+        // console.log(tabList); [div,div,div]
+
+        // 给响应的元素绑定响应的事件
+        for (var i = 0; i < navList.length; i++) {
+            // navList[i] // 代表每一个li
+            navList[i].index = i;
+            // 通过给li增加自定义属性，把每一个li对应的索引放到自己身上
+            navList[i].onclick = function () {
+               /*  
+                1、把所有的li的类名清空
+                2、再把所有div的类名清空
+                3、给当前点击的li增加类名，再给当前点击的li所对应的div加上类名 */
+                select(this.index); 
+                // 传递的实参应该是当前点击的li的索引
+            }
+        }
+
+
+
+        // for (var i = 0; i < navList.length; i++) {
+        //     navList[i].index = i;
+        //     navList[i].onclick = select(this.index);
+        // 这种直接让函数执行了，最终给onclick绑定的是undefined
+      
+        // }
+
+        /* 
+        i=0
+        navList[0].index = 0;
+        navList[0].onclick = select(this.index)
+
+         */
+
+
+
+        function select(index){
+            for(var i = 0;i<navList.length;i++){
+                // 循环清空所有li和div的类名
+                navList[i].className = '';
+                tabList[i].className = '';
+            }
+
+            // 通过当前的索引给对应的li和div加上类名
+            navList[index].className = 'active';
+            tabList[index].className = 'active';
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

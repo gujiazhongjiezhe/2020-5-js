@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 代码的执行：浏览器是怎么解析代码的，以及解析代码的顺序和特点
+        // 浏览器在解析js代码的时候所做的事(堆栈运行图)
+
+        // 首先我们打开一个页面，就会行成一个全局的作用域，为代码执行提供环境
+        // 全局作用域一个页面只有一个；用来存储咱们的基本值和变量
+        // 当你的全局作用域生成之后，会默认生成一个全局的window大对象
+
+        // 如果当前的函数在window上存放着，那使用的时候 window.parseFloat()
+
+        // window.parseFloat('123')
+        // Number
+        // String
+        // window.conlose.log()
+        // 如果使用window上的方法，可以省略window.
+
+        // console.log(window.ss);
+
+        // 全局变量：在全局作用域下定义的变量就是全局变量
+
+        // let a = 12;
+        // var b  =13;
+        // 全局变量的特点
+        // 1、在全局作用域下用var和function创建的变量会给window增加键值对，属性名是变量名，属性值是就是当前变量所代表的值(window和全局变量是相通的)【let和const不支持】
+
+        // var a = 12;
+        // console.log(window.a); // 12
+        // console.log(a); // 12
+
+        // function fn() {
+        //     console.log(12);
+
+        // }
+        // console.log(window.fn); // f
+        // console.log(fn); // f
+
+        // var a = 12; // 虽然也会给window增加键值对，但是还有变量提升
+        // b = 13; // window.b = 13  没有变量提升
+        // console.log(a, b);
+
+        // 2、在同一个作用域下，用var和function创建的变量可以重复命名，但是let和const就不可以
+        // 在执行的过程中，如果第一次声明之后，就不会再重复声明了，但会要重复定义
+        //                                        （创建）                             (赋值)
+
+        // var a = 12;
+        // var a = 13;
+        // console.log(a); // 13
+
+
+        // 在代码执行之前会有一个语法解析的过程，他会看看当前页面的代码有没有不符合语法规范的，如果有，那就直接报错，页面不会输出任何代码
+        // console.log(13);
+        // let a = 12;
+        // let a = 12; // SyntaxError 语法错误，会导致整个页面代码不执行
+        // console.log(a);
+
+
+        // console.log(13); // 13
+        // console.log(b); // ReferenceError 引用错误下面的代码就不会再执行
+        // console.log(14);
+
+
+        // if() {
+
+        // }
+        // let 1 = 'a'
+        // for(){
+
+
+        // console.log(12);
+        // var a = 12;
+        // let a = 13;  // SyntaxError 语法错误
+        // console.log(a);
+
+
+        // function fn() {
+        //     console.log(1);
+
+        // }
+
+        // function fn() {
+        //     console.log(2);
+
+        // }
+        // console.log(fn); // function(){console.log(2)}
+
+        // 3、var和function创建的变量存在变量提升，但是let和const不会
+
+        //-----------------------------------------------------------------------
+        // var a = b = c = 12; // 等价于 var a = 12; b = 12; c = 12;
+
+        // var a,b,c = 12; // 等价于 var a; var b; var c = 12;
+
+        // var a = 12,b = 13,c=14; // var a = 12; var b = 13; var c = 14;
+    </script>
+</body>
+
+</html>

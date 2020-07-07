@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        String类
+            1、拿单引号，双引号，反引号包裹起来的就是字符串
+            2、把其他数据类型转换为字符串 val.toString();  String(val)
+        */
+
+        // 把Number和Boolean准字符串直接加引号(基本值转字符串直接加引号)
+        // console.log( (12).toString() ); //'12'
+        // console.log(true.toString()); // 'true'
+        // console.log(null.toString()); // null和undefined不能直接调用toString
+
+
+        // console.log(String(null)); // 这是可以的
+        // console.log(String(undefined)); // 这是可以的
+
+        // 把引用值转字符串
+        // 所有的普通对象转字符串都是'[object Object]'
+        // let obj = {};
+        // console.log(obj.toString()); // '[object Object]'
+        // 数组转字符串：先把数组里的每一项都去转字符串，最后再把所有的字符串加上逗号拼接起来，
+        // let ary = [1,2,3,4];
+        // console.log(ary.toString()); // '1' ,'2','3','4'-->'1,2,3,4'
+
+        // console.log(String([1,2,3,4]));
+
+
+        // 四则运算
+        // 如果运算的值不是Number类型的，要先转化为Number类在进行运算
+        // 只要在数学运算过程中出现了NaN，那最后的结果就是NaN
+        // // console.log(12+35*12);
+        // console.log(null+true+false); // 0+1+0->1
+        // console.log(null+1+true); // 0 + 1+ 1 = >2
+        // console.log(null +undefined); // 0 + NaN --> NaN
+        // console.log(true*null); // 0
+
+        // 在加法运算过程中，会出现两种情况
+        // 正常运算
+        // 字符串拼接：在加法中一旦加号和引号相遇了，那就不在是正常的数学运算，就是字符串拼接了
+        // 如果是基本值就直接拼接，不用进行数据类型的转换
+        // 如果在拼接过程中遇到了引用值，也要进行数据类型的转换(转为字符串)
+        // console.log(1 + '11'); // '111'
+        // console.log(true + '11'); // 'true11'
+        // console.log(1 + 'wer'); // '1wer'
+        // console.log(1 - 'wer');// 1-NaN -->NaN
+        // console.log(1+2+3+'23'); // 6+'23'-->'623'
+        // console.log(1+2+3+"23"+1+1); // 6 + '23' +1 +1 --> '623' + 1+ 1-->'6231' + 1-->'62311'
+
+        // console.log(1 + true + null + undefined + 'erYa' +true);
+        // //         1+1-->2
+        // //          2+ 0
+        // //           2+ NaN
+        // //            NaN + 'erYa'
+        // //              'NaNerYa' + true
+        // //                'NaNerYatrue'  
+
+        // console.log(35 + 678 + undefined -true +'erYa' + true + undefined);
+        //     //        NaN-true-->NaN + 'erYa'-->'NaNerYa'+true-->'NaNerYatrue' + undefined-->'NaNerYatrueundefined'
+
+
+        // let a = 1 + null + true + [] +undefined + '森哥'+ null + {} + 10 + false;
+        //        //         '2undefined森哥null[object Object]10false'
+        // // 'NaN森哥null10false'
+
+
+
+        // console.log('1'+undefined); // '1undefined'
+
+        // 引用值的拼接
+        // console.log(1+[]); // 1  '1'
+        // 引用值在转数字的过程中，要先转字符串，转成字符串以后加号和引号相遇了，那就直接拼接了
+        // 1 + '' ---> '1'
+
+        // 如果在拼接过程中遇到了引用值，也要进行数据类型的转换
+
+        // console.log([] + []); // '' + []-->''+''--> ''
+        // console.log({} + {}); // '[object Object]' + {}-->'[object Object]' + '[object Object]'  -->'[object Object][object Object]'
+        // console.log({} + []); // '[object Object]' + []--->'[object Object]' + ''-->'[object Object]'
+
+        // console.log(1*{}); // 1-NaN-->NaN
+
+
+        // []+1*[]-->[]+0-->''+0-->'0'
+        // console.log([]+1*[]);
+
+
+        // console.log(1 +true +null + undefined + 'erYa' +[] +{});
+        // //             NaN +'erYa'-->'NaNerYa' +[]-->'NaNerYa'+{}--> 'NaNerYa' +'[object Object]' -->'NaNerYa[object Object]'
+
+        // console.log(10 + null + true + [] + '珠峰' + [] + null + {} + false);
+        //           11 +''-->'11' +'珠峰'-->'11珠峰'-->'11珠峰' +[]-->'11珠峰'+null--> '11珠峰null'-->'11珠峰null' +'[object Object]'-->'11珠峰null[object Object]false'
+
+
+
+
+            //    var str=  'sfsajdbfuaiee中国jfhsab'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // if
+        // for
+
+        /* 
+        js中的逻辑判断语句：条件成立做什么事，不成立又做什么事
+        if/else  else if  else
+         */
+
+        // let num = 1;
+        //  if(num == 9){
+        //      // 如果小括号里的东西转布尔是true，那就是是成立，然后就走大括号里的代码
+        //      // 
+        //      console.log('条件成立了');
+
+        //  }
+        //  else if(num == 1){
+        //     console.log(6666);
+
+        //  }
+        //  else {
+        //     //  如果上边的条件不成立，那就走else的代码
+        //             console.log('条件不成立');
+
+        //  }
+        // 上边的条件只会走一个
+
+        // else if可以不写，也可以写多个
+        //  else也可以不写，但是if必须写
+        // let num = 1;
+        // if(num<3){
+        //     console.log(1);
+
+        //     // 小括号里会转布尔
+
+        // }
+        // else {
+        //     console.log(3);
+
+        // }
+
+        // if可以嵌套
+        // let num = 9
+        // if(num == 9){
+        //     if(num<1){
+        //         console.log('haha');
+
+        //     }
+        // }
+        // else {
+        //     console.log(333);
+
+        // }
+
+        // let num = 10;
+        // if(num>5){
+        //     if(num ==='10'){
+        //         console.log('恭喜');
+        //     }
+        //     else {
+
+        //     }
+
+
+        // }
+        // else {
+        //     console.log('卡瓦迪卡');  
+        // }
+
+        //-----------------------------
+
+        // js中的循环：不断重复的做某件事
+        // let ary = [100,200,300];
+        // console.log(ary[0]);
+        // console.log(ary[1]);
+        // console.log(ary[2]);
+
+        // for循环：
+        // 1、创建循环的初始值
+        // 2、创建/判断循环的条件是否成立
+        // 3、条件如果成立，就执行循环体的代码
+        // 4、进行步长累计
+
+        // 2-->3-->4-->2-->3-->4-->2-->3-->4-->2
+        // for(var i =0;i<3;i++){ // 在之前的基础上加1
+        //     // 大括号就是循环体
+        //     // console.log(1); // 第一次 第二次 第三次
+        //     console.log(i); //0 1 2
+
+        //     // for循环执行不完，代码是不会往下走的 
+        // }
+
+        // console.log(i); // 3
+
+
+        // let a = 1;
+        // a++; // a = a+1 累加1
+        // a++
+        // console.log(a); // 2
+
+        let ary = [100, 200, 300];
+        // 我想输出数组的每一项
+        // console.log(ary[0]);
+        // console.log(ary[1]);
+        // console.log(ary[2]);
+
+        for (var i = 0; i < ary.length; i++) {
+            // console.log(i); // 0 1 2
+            console.log(ary[i]);//  100 200 300 // 输出数组的每一项
+
+        }
+
+        // continue break
+        // continue：结束当前轮循环，进行下一轮循环
+        // break:结束整个for循环
+        //  for(var i = 0;i<3;i++){
+
+        //     if(i === 1){
+        //         continue;
+        //     }
+        //     console.log(i);  // 0 2
+        // }
+
+
+
+        // for (var i = 0; i < 3; i++) {
+
+        //     if (i === 1) {
+        //         break;
+        //     }
+        //     console.log(i);  // 0
+        // }
+        // console.log(i); // 1
+
+        // var a = 12;
+        // // a+=3; // 在原来基础之上累加3  a = a+3
+        // console.log(a); // 15 
+
+        // for (var i = 0; i < 7; i++) {// 1 2 3 4 5 6 7 8
+        //     if (i >= 2) {
+        //         i += 1
+        //         continue;
+        //     }
+        //     if (i > 6) {
+        //         break;
+        //     }
+        //     console.log(i); // 0  1
+        // }
+        // console.log(i); // 8
+
+        // 函数这块的视频必须的看
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

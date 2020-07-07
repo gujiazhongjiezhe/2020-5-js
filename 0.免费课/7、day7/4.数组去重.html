@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let ary = [100, 200, 400, 200, 200];
+        // 去除重复项
+
+        // 对象的键值对不能重复，如果重复了，下面会覆盖上面的
+
+        function unique(ary) {
+            // 1、创建一个新的对象，然后循环数组，把数组的每一项既当做属性名又当做属性值给对象新增键值对
+            let obj = {};
+            for (var i = 0; i < ary.length; i++) {
+                // ary[i] // 代表数组的每一项
+                obj[ary[i]] = ary[i]; // 给object新增键值对
+                // obj[100] = 100
+                // obj[200] = 200
+            };
+            // console.log(obj);
+            // 2、创建一个新的数组，然后用for in去遍历对象，把每一个键值对的属性值放到这个新数组中
+            let newAry = [];
+            for (var key in obj) {
+                // obj[key] // 代表每一个键值对的属性值
+                newAry.push(obj[key]); // 给数组新增内容
+            };
+            // console.log(newAry);
+            return newAry;
+        }
+
+
+        console.log(unique(ary));
+        console.log(ary);
+    </script>
+</body>
+
+</html>

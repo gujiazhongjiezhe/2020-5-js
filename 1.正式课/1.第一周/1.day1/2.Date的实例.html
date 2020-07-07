@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Date是一个类， new Date的返回值是一个对象，是一个引用值，他里面有好多的方法供我们去使用
+        // Date产生的时间是你当前电脑的时间，不能作为重要的时间依据
+
+        // console.dir(new Date());
+        let time = new Date(); // 获取当前时间，只不过当前的格式没办法直接使用
+
+        let year = time.getFullYear(); // 2020  年
+        let month = time.getMonth() + 1; // (0-11,分别代表1到12月份) 月份
+        let date = time.getDate(); // 获取日
+        let day = time.getDay(); // 获取星期(0-6, 0代表星期日)
+
+        let hour = time.getHours(); // 获取小时
+        let min = time.getMinutes(); // 获取分钟
+        let sec = time.getSeconds(); // 获取秒
+        let mill = time.getMilliseconds(); // 获取毫秒
+
+        console.log(year, month, date, day, hour, min, sec, mill);
+
+        // let timeStab = time.getTime(); // 当前时间距离1970年1月1号上午八点的时间差(毫秒差)
+        // console.log(timeStab); // 时间戳
+    </script>
+</body>
+
+</html>

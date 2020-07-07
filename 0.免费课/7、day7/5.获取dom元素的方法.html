@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" class="a">
+        1111
+        <ul id="ul">
+            <li class="a">1</li>
+            <li class="a">2</li>
+            <li class="b">3</li>
+            <li class="b">4</li>
+            <li>5</li>
+        </ul>
+        <li>6</li>
+    </div>
+    <script>
+        // 获取dom元素的方法
+
+        // document.getElementById('id名'):通过id名去获取元素，获取的是一个元素对象，如果获取不到就是null
+
+        // context.getElementsByTagName('标签名')：在指定的上下文中通过标签名去获取元素，获取的是一个元素集合(类数组)，如果获取不到就是空元素集合 []
+
+        // context.getElementsByClassName('类名')：在指定的上下文中通过类名去获取元素，获取的是一个元素集合(类数组)，如果获取不到就是空元素集合 []
+
+        // context.querySelector(''):在指定的上下文中通过选择器来获取元素，获取的是一个元素对象，如果获取不到就是null
+
+        // context.querySelectorAll(''):在指定的上下文中通过选择器去获取元素，获取的是一个元素集合(类数组)，如果获取不到就是空元素集合 []
+
+
+
+
+
+        // let box = document.getElementById('box');
+        // console.log(box);
+
+        // let ul = document.getElementById('ul');
+
+        // let list = ul.getElementsByTagName('span');
+        // console.log(ul);
+
+        // 我想用byTagName获取id名为box的元素
+        // let box = document.getElementsByTagName('div')[0]; // 获取id名为box的元素
+        // console.log(box);
+
+        // let list = document.getElementsByClassName('a')
+        // console.log(list);
+
+        // let list = document.querySelector('ul>li.b');
+        // 只能获取符合条件的第一个
+        // console.log(list);
+
+        // let list = document.querySelectorAll('#box>ul>li.a');
+        // console.log(list);
+
+        // document.body:获取body
+        // document.documentElement:获取html
+        // document.head:获取头部
+    </script>
+</body>
+
+</html>

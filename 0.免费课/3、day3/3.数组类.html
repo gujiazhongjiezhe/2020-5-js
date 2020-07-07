@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        引用数据类型之数组Array类
+            1、每一个数组的外层由中括号进行包裹
+            2、数组和对象一样都是由键值对组成，键值对的属性名是由浏览器自动生成的，从0开始依次递增，属性值就是你在数组里写的每一项(所以数组就是特殊的对象)
+            3、数组的属性名可以代表每一个键值对的位置，所以说数组的属性名也叫作索引
+            4、每一个数组天生自带一个属性length，他代表当前数组的长度，(个数)
+            5、给数组末尾增加一项 ary[ary.length] = xxx
+            6、获取数组第一项 ary[0]
+            7、获取数组最后一项 ary[ary.length-1]
+            8、删除数组最后一项 ary.length = ary.length-1
+            9、清空数组 ary.length = 0 
+         */
+
+        //  let ary = [12,false,true,2,null]
+       
+        //  console.log(ary[2]);
+        //  ary[2] = 33
+        //  console.log(ary);
+        // console.log(ary.length); // 3
+        
+
+        // 给数组末尾新增一项
+        //  ary[3] = 1
+        //  ary[ary.length] = 1 // 可以给任意一个数组增加最后一项
+        // 获取数组第一项和最后一项
+        // ary[0]
+        // ary[ary.length-1]
+
+        // let ss = [true,]
+
+        // let ss = [true,false,null];
+        // ss[3] = 1;
+        // ss[ss.length] = 1;
+
+
+        let ary = [true,false,null];
+        // ary[0] // 获取数组开头一项
+        // ary[ary.length-1] //获取数组最后一项
+        // ary[3] = xxx;
+        // ary[ary.length] = xxx;
+
+        // let w = [300,500,600];
+        ary.length = 2;
+        ary.length = ary.length-1
+        console.log(ary);
+       
+        
+ 
+        
+
+
+         
+    </script>
+</body>
+</html>

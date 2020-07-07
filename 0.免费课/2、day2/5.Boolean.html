@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 
+        Boolean true false
+            1、把其他数据类型转化为布尔类型 Boolean(val)
+                // 把其他数据类型转布尔有且只有 NaN、null、undefined、0、''是false,其余的都是true
+        */
+            // console.log(Boolean(NaN));
+            // console.log(Boolean(null));
+            // console.log(Boolean(undefined));
+            // console.log(Boolean(''));
+            // console.log(Boolean(0));
+
+        // !val:先把val转布尔然后在取反
+        // !!val:先把val转布尔，然后然后取反再取反，等价Boolean(val)
+
+        console.log(!1); // false
+        console.log(!isNaN(0)); // true
+        console.log(!isNaN(![1,2,3])); //  !isNaN(false) // true
+        console.log(!isNaN(undefined)); // false
+
+        // !isNaN(![1,2,3])
+        // !isNaN(false)
+        // !false-->true
+
+
+        console.log(!!isNaN(undefined)); // true
+
+        // !!val等价于Boolean(val);
+        console.log(!![1,2,3]); // true
+        console.log(Boolean([1,2,3])); // true
+        
+        
+        
+        
+
+        
+        
+        
+        
+
+
+
+
+        
+    </script>
+</body>
+</html>

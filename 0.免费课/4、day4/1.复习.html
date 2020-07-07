@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        数据类型的比较
+        数组
+        js中的判断，循环
+        堆栈内存的区别
+        
+         */
+
+        // let a = 12; // 14
+        // if (a >= 0 && a <= 20) { // a >= 0 && a <= 20  && 两边转布尔必须全是true，条件才成立
+        //     if (a % 2 === 0) { // %是取余数的意思  例：  5除以2商2余1  4除以2商2余0 12%2余0
+        //         a += 2; // a = a+2
+        //     }
+        // } else {
+        //     a -= 2; 
+        // }
+        // console.log(a); // 14
+
+        //--------------------------------------------------------------------
+
+        let ary = ['erYa', '珠峰', '培训', true, false];
+        // 判断循环成立的条件
+        // 条件成立执行循环体的代码
+        // 进行步长累计
+
+        // break:结束整个循环
+        // continue：结束当前轮循环，进行下一轮循环
+        // for (var i = 0; i < ary.length; i++) {
+        //     console.log(ary[i]); // ary[0] 'erYa'
+        //     break;
+        // }
+        // console.log(i); // 0
+
+
+        //----------------------------------------------------------
+        // for (var i = 10; i > 0; i--) { // 9 8 7 6 5 4 3 2 1
+        //     continue; // continue下面的代码不会执行
+        //     console.log(i);
+        // }
+        // console.log(i); // 0
+
+        //----------------------------------------------------
+        // for (var i = 1; i <= 10; i += 2) { // 每次给i累加2 //  2 4 5 7 5
+        //     if (i <= 5) {
+        //         i++;
+        //         continue;
+        //     } else {
+        //         i -= 2;
+        //         break;
+        //     }
+        //     i--;
+        //     console.log(i);
+
+        //     // for循环执行不完，代码是不会往下走的
+        // }
+        // console.log(i); // 5
+        //------------------------------------
+        // for (var i = 3; i < 12; i++) { // 2 3 2 3
+        //     if (i < 3) {
+        //         i++;
+        //         break;
+        //     }
+        //     if (i > 9) {
+        //         i += 2;
+        //         continue;
+        //     }
+        //     i--;
+        //     // for循环循环不完，下面的代码不会执行
+        // }
+        // console.log(i);
+
+        //----------------------------------------------------
+        // 1、 !(!"Number(undefined)"); // true
+
+
+
+        // 2、 isNaN(parseInt({})) + Number([1]) + parseFloat(undefined); // NaN
+        // true         +        1         +         NaN
+
+        // 3、 Boolean(Number("")) + !isNaN(Number(null)) + Boolean("parseInt([])") + !null;   // 3  NaN
+
+        //  false                 + true                  + true     + true // 3
+
+        // 4、 parseFloat("1.6px") + parseInt("1.2px") + parseInt(null).toString(); // '2.6NaN'
+        // 1.6 + 1 +   'NaN' ->   2.6+'NaN' -->'2.6NaN'                                NaN.toString() // 'NaN'
+        // 
+        // 5、 isNaN(Number(!!Number(parseInt("0.8")))); // false
+        // isNaN(Number(!!Number(0)));
+        // isNaN(Number(false));
+        // isNaN(0); // false
+
+
+
+        // [] == []  false
+        // '' == 0  true
+        // [0] == false  true
+        // true == 1  true
+        // ({}) == '' // false
+        // [] == 0 // true
+        // 0 == null // false
+        // '{}' == 1 // false
+
+        // undefined == null // true
+        // null == undefined // true
+        // ({name:1}) == ({name:1}) // false
+        // undefined == 0 // false
+
+        // 对象 == 对象：空间地址
+        // 对象 == 字符串：左右两边转字符串
+        // null == null // true
+        // undefined == undefined // true
+        // null == undefined // true
+        // 除了以上三种情况以外，null和undefined和谁都不相等
+        // NaN和谁都不相等包括自己
+
+
+
+        //-------------
+        // let age = null;
+        // let name = 'weiWei';
+        // let obj = {
+        //     name: name, // 'weiWei 'name'
+        //     age: age, // null
+        //     name: 'name',
+        //     3: 'erYa'
+        // };
+        // console.log(obj); // {name:'name',age:null,3:'erYa'}
+        // obj.name = name; // 'weiWei'    {name:'weiWei',age:null,3:'erYa'}
+        // console.log(obj.name); // 'weiWei'
+        // obj = {}; // 给obj重新赋值一个空间地址
+        // console.log(obj.name); // undefined
+        // obj.name = name; // 给obj新增键值对  {name:'weiWei'}
+        // obj.ifantName = 'liaoLiao'; // {name:'weiWei',ifantName:'liaoLiao'}
+        // console.log(obj.name, obj.ifantName, obj) // 'weiWei', 'liaoLiao'
+
+        //---------------------------------------------------
+        // let n = [10, 20];
+        // let m = n;
+        // let x = m;
+        // m[0] = 100;
+        // x = [30, 40];
+        // x[0] = 200;
+        // m = x;
+        // m[1] = 300;
+        // n[2] = 400;
+        // console.log(n, m, x)
+
+        //------------------------------------
+        let a = {
+            n: 1
+        };
+        let b = a;
+        a.x = a = { // 像这种连续等于要从左往右依次赋值
+            n: 2
+        };
+        console.log(a.x, b);
+
+
+    </script>
+</body>
+
+</html>

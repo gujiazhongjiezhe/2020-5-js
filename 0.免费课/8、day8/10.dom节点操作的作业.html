@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        div {
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+            color: white;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        ul li {
+            position: relative;
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 5px;
+            color: aqua;
+        }
+        
+        button {
+            position: absolute;
+            right: 0;
+            height: 20px;
+            width: 30px;
+            font-size: 12px;
+            background: rgb(118, 194, 3);
+        }
+        
+        input {
+            display: block;
+            width: 50%;
+            margin: 0 auto 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="input">
+        <ul id="box"></ul>
+    </div>
+
+    <script>
+        // 1、想操作谁就获取谁(获取input和ul)
+        let input = document.getElementsByTagName('input')[0],
+            box = document.querySelector('#box');
+        // console.log(input, box);
+
+
+        // 2、给当前的input框绑定响应的事件(失去焦点事件)
+        input.onblur = function() {
+            // 动态生成一个li元素，然后把input框的内容给到li元素中，然后再把li元素插入到box里
+            let li = document.createElement('li');
+            let text = this.value; // 获取input框的内容
+            // let text = input.value
+            li.innerText = text; // 把input框的内容给到li
+            let btn = document.createElement('button'); // 动态生成button元素
+            btn.innerText = '删除'; // 给button增加内容
+            li.appendChild(btn); // 把button插入到li的末尾
+
+            box.appendChild(li); // 把虚拟的li插入到box中
+            this.value = ''; // 把input框的内容置为空
+
+
+            // 增加各行变色
+            let list = document.getElementsByTagName('li'); // 获取所有的li
+            for (var i = 0; i < list.length; i++) {
+                if (i % 2 === 0) {
+                    list[i].style.background = 'pink';
+                } else {
+                    list[i].style.background = 'green';
+                }
+            }
+
+            // 给按钮绑定点击事件(点击按钮删除当前的li)
+            btn.onclick = function() {
+                // 父亲节点.removeChild(你要删除的节点)
+                // console.log(this); // btn
+                console.log(this.parentNode.parentNode); // 获取li的父节点
+                this.parentNode.parentNode.removeChild(this.parentNode)
+                    // box.removeChild(li)
+
+                // 当删除完成之后在重新进行隔行变色
+                let list = document.getElementsByTagName('li'); // 获取所有的li
+                for (var i = 0; i < list.length; i++) {
+                    if (i % 2 === 0) {
+                        list[i].style.background = 'pink';
+                    } else {
+                        list[i].style.background = 'green';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

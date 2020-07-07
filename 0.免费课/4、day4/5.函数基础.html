@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        函数是js中的数据类型之一
+        属于引用数据类型
+
+
+         */
+
+        // 需求，求两个数之和，然后在除以2
+
+        //  let num1 = 10;
+        //  let num2 = 12;
+        //  let total = num1+num2;
+        //  total= total/2;
+        //  console.log(total);
+
+
+        //  let num3 = 15;
+        //  let num4 = 16;
+        //  let total1 = num3+num4;
+        //  tota1l= total1/2;
+        //  console.log(total1);
+
+        //  榨汁机
+        // 生产榨汁机(定义函数)，就是把榨汁这个功能集成到榨汁机里边(把当前求和的逻辑集成到函数里边)，有一个入口去放入你的水果(形参)，
+        // 当咱们榨完果汁之后咱们得把果汁倒出来，所以榨汁机就得有一个出口(return执行的结果)
+
+
+        // 使用榨汁机
+        // 先把水果放进去(在函数里就是放入实参)，启动榨汁机(函数执行)，当榨汁机执行完成之后，把榨好的果汁倒出来
+
+        // 函数的定义：
+        // 函数就是一个方法，把实现某个功能的代码封装到一起，以后你想要使用这个功能就直接执行这个方法就好了
+        // 减少代码的冗余
+        // 提高代码的复用率
+        // (高内聚，低耦合)
+
+        // 定义函数
+        function sum(num3,num4) { // 小括号里的东西就相当于榨汁机的入口(在函数里就是形参变量)
+            let total = num3 + num4;
+            total = total / 2;
+            // console.log(total);
+            return total;
+            // 就相当于榨汁机倒出来的果汁，(在函数里就是return出来的值，也叫作函数的执行结果)
+        };
+
+        // 执行函数
+        // 函数名+() // 小括号里就是榨汁机执行时放的水果(在函数里叫做实参)
+
+            sum(10,11)
+        // let cup = sum(10,11);
+        // console.log(cup);
+        // console.log( sum(10,11) );
+        
+        
+
+
+        // console.log(total);
+        
+        // sum(20,40);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

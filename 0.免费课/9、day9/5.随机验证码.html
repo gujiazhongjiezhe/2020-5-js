@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 800px;
+            margin: 20px auto;
+            display: flex;
+            text-align: center;
+        }
+        
+        span {
+            display: block;
+            width: 60%;
+            border: 1px solid pink;
+            line-height: 30px;
+            color: orangered;
+            font-size: 20px;
+        }
+        
+        button {
+            display: block;
+            width: 35%;
+            background-color: orangered;
+            color: white;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="show">显示验证码的地方</span><button id="btn">看不清</button>
+    </div>
+    <script>
+        // 1.想操作谁就获取谁
+        let show = document.getElementById('show');
+        let btn = document.querySelector('#btn');
+
+        function createCode() {
+            let str = '0123456789asdfghjkASDFGHJ'
+                // 随机产生一个字符串的索引，按照索引去获取对应的字符串的值
+                // 产生四次，把四个字符拼接到一起就是最后的验证码
+            let value = '';
+            for (var i = 0; i < 4; i++) {
+                // Math.round(Math.random()*(m-n)+n);
+                // n是0  m是str.length-1
+                let index = Math.round(Math.random() * (str.length - 1 - 0) + 0);
+                // 产生一个随机的索引
+                let item = str[index]; // 通过索引去获取对应的字符
+                value += item; // 把字符拼接到value里
+            };
+            show.innerHTML = value; // 把产生的验证码插入到span中
+        }
+        createCode(); // 让页面初次加载的时候就产生一个验证码放到页面
+        btn.onclick = createCode;
+    </script>
+</body>
+
+</html>

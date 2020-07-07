@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            /* border-bottom: 10px solid black; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="abc" style="background:red">1111
+        <!-- <span>我是span</span> -->
+    </div>
+    <script>
+        // 在js中页面的标签叫做元素
+        // 页面中的元素是对象数据类型的
+        let box = document.getElementById('box');
+        // 通过id名获取页面中的元素
+        // get:获取
+        // element：元素
+        // by：通过什么什么
+
+        // console.log(box);
+        console.dir(box); // dir是详细输出一个对象
+
+        /* 
+        className:当前元素的class名
+        style:当前元素的行间样式
+        innerHTML:当前元素的内容（可以识别字符串的标签）
+        innerText：当前元素的内容(不可以识别字符串的标签)
+         */
+        // 通过js获取当前box元素的class名
+        // console.log(box.className); // 获取当前元素的class名
+        // box.className = 'xxx'; // 给当前元素class名
+        //---------------------------------------------------------
+        // console.log(box.style.background); // 获取行间样式
+        // box.style.background = 'green' // 设置当前元素的行间样式
+        // box.style.fontSize = '80px'
+        // console.log(box.style.borderBottom);
+        // box.style.borderBottomWidth = '30px';
+        // box.style.borderBottomColor = 'pink';
+        // box.style.borderBottomStyle = 'solid';
+        //------------------------------------------------
+        // console.log(box.innerHTML); // 获取当前元素的内容
+        // box.innerHTML = '1234567'
+        // box.innerHTML = '<span>我是span</span>'; // 可识别字符串的标签
+        // // box.innerText = '<span>我是span</span>' // 不可以识别字符串的标签
+        // console.log(box.innerHTML);
+        // box.innerHTML+='<span>我是span</span>'; // 在之前基础上累加内容
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

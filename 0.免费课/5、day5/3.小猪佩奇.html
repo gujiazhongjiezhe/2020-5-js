@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #box p {
+            font-size: 40px;
+            color: orangered;
+            cursor: pointer;
+        }
+
+        #box img {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #box .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p id="btn">隐藏</p>
+        <img id="card"
+            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573150275632&di=8a7f6c6ddf4656c1a67b519bb7244be9&imgtype=jpg&src=http%3A%2F%2Fimgsa.baidu.com%2Fexp%2Fw%3D500%2Fsign%3Df0c47dd191504fc2a25fb005d5dfe7f0%2F6d81800a19d8bc3e6edff713888ba61ea9d34510.jpg"
+            alt="" class="a b c">
+    </div>
+    <script>
+        let btn = document.getElementById('btn'); // 获取当前p标签
+        let card = document.getElementById('card'); // 获取当前的img元素
+
+        //2、给当前p标签绑定点击事件
+        btn.onclick = function () {
+            let text = btn.innerHTML; // 获取当前p元素的内容 (获取的内容是字符串类型的)
+            console.log(text);
+            // 如果当前p元素的内容是隐藏，那就让图片隐藏，并且让p的内容改为显示
+            // / /反之让图片显示，让p的内容改为隐藏
+            if (text == '隐藏') {
+                btn.innerHTML = '显示';
+                
+                // card.className = 'hide';
+                // 给当前元素增加hide类名
+
+                card.style.display = 'none';
+                // 给当前元素增加行间样式
+
+            }
+            else {
+                btn.innerHTML = '隐藏';
+                // card.className = '';
+                // 给当前元素清空类名
+
+                card.style.display = 'block';
+                // 给当前元素增加行间样式
+            }
+
+        }
+    </script>
+</body>
+
+</html>

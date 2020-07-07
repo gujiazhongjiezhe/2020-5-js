@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        1、转数字的方法有哪些？
+            Number
+            parseFloat
+            parseInt
+        2、数据类型检测的方法有哪几种(自己尝试去查一下)
+            typeof: 数据类型检测的属性
+            instanceof：检测当前实例是否属于某个类
+            constructor：基于构造函数检测当前的数据类型
+            Object.prototype.toString.call：检测数据类型最好的方式
+         */
+        //  console.log(true+0); // 1
+        //  console.log({}-1); // NaN
+
+        // let a = 2;
+        // console.log(a);
+
+        // console.log(typeof 2); // 'number'
+        // 只有假发才有可能出现字符串拼接，
+        // var a = 'abc' + 123 + 456; // 'abc123' +456-->'abc123456'
+        // var b = '456' - '123'; // 456 - 123--> 333
+        // var c = 100 + true + 21.2 + null + undefined + "Tencent" + [] + null + false; 
+        // 100+1+21.2+0+NaN-->NaN +'Tencent'-->'NaNTencent'+[]-->'NaNTencent' + null-->'NaNTencentnull'+false-->'NaNTencentnullfalse'
+
+        // 'NaNTencentnullfalse'
+        // let d = [] + []; // ''+[]-->'' + ''-->''
+        // let e = [] + {}; // ''+{}-->''+'[object Object]'-->'[object Object]'
+        // let f = 1 + true + null + [3.1415926] + '小花' + [] + null + undefined;
+        // 1+1+0-->2+ [3.1415926]-->2+'3.1415926'-->'23.1415926'+'小花'-->'23.1415926小花'+[]-->'23.1415926小花'+null-->'23.1415926小花null'+undefined-->'23.1415926小花nullundefined'
+
+        // let g = parseFloat("1.6px") + parseInt("1.2px") + parseInt(null).toString();
+        // 1.6 + 1 +'NaN'-->2.6 +'NaN'-->'2.6NaN'            NaN.toString() // 'NaN'
+        // 'NaN'
+
+        // let z = 316 * 417 + 3 + undefined; // NaN
+        // let h = !(!"Number(undefined)");// true
+        //             Number(undefined)
+
+        //             console.log("Number(undefined)"); // 
+        //             console.log( Number(undefined)); // NaN
+
+
+
+        // Number('') // 0
+        // Number('23.2.2') // NaN
+        // Number(null) // 0
+        // Number('12px') // NaN
+        // !parseInt('') // true
+        // !!parseInt('12.5px') // true
+        // parseFloat('12.5px') // 12.5
+        // isNaN('') // false
+        // isNaN('12px') // true
+
+        // isNaN(NaN) // true
+
+        // !Boolean(Number(isNaN(undefined))) // false
+        //      //       !Boolean(Number(true))    
+        //      //   !Boolean(1) 
+        //     //  !true
+        //     // false
+        // !Boolean(!Number(!isNaN(undefined))) // 
+        // //  !Boolean(!Number(!true))
+        // // !Boolean(!Number(false))
+        // //  !Boolean(!0)
+        //  //  !Boolean(true)
+        //      //  !Boolean(true)
+        //      // !true
+        //      // false
+
+
+        let friend = 'xiaoHua';
+        let name = 'friend';
+        let person = {
+            name: 'erYa',
+            age: 18,
+            sex: 'girl', // null
+            friend: friend, // 'xiaoHua'
+            name: 'xxx', // '111'
+            3: 666
+        }
+        person.name = '111'; // 修改对象中属性名name所对应的值
+        person.ss = 'sss'; // 给对象新增键值对
+        person['sex'] = null; // 假删除
+        console.log(person.name);// 获取 '111'
+        console.log(person['name']);// 获取 '111'
+        console.log(person[name]); // person['friend'] // 'xiaoHua'
+        console.log(person[3]);// 666.,如果属性名是数字，那必须用中括号的形式去获取
+        console.log(person.sex); // null
+        // delete 对象名.属性名
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
