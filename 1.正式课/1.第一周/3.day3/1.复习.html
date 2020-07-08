@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 全局作用域 全局变量
+        // 私有作用域 私有变量
+
+        // 在私有作用域里使用var let const function创建的变量就是私有变量 (形参也是私有变量)
+
+        // 函数
+
+        // 函数执行
+        // 形成私有作用域
+        // 形参赋值
+        // 变量提升
+        // 代码执行
+        // 作用域是否销毁
+
+        // var ary = [12, 23]; // 全局  af0  [100,23]
+        // function fn(ary) { // af0
+        //     // 形参就是空间地址
+        //     console.log(ary); // af0 [12,23]
+        //     ary[0] = 100; // af0[0]  = 100
+        //     ary = [100]; // 重新开辟堆内存 af1  [0]
+        //     ary[0] = 0; // af1[0] = 0
+        //     console.log(ary); // [0]
+        // }
+        // fn(ary); // af0
+        // console.log(ary); // [100,23]
+
+        // var a = 4;
+        // var f = 3;
+
+        // function b(x, y, a) { // 1  2  3
+        //     alert(a); // '3'
+        //     // 形参和arguments存在映射关系；
+        //     arguments[2] = 10; // 把arguments的第三项改为10,同时形参的第三项也会跟着发生变化
+        //     alert(a); // '10'
+        // }
+        // a = b(1, 2, f); // 就是给a重新赋值
+        // alert(a); // 'un'
+        // console.log(f); // 3
+
+
+        // function fn(x, y, z) {
+        //     // console.log(x, y, z);
+        //     // x = 10
+        //     console.log(arguments);
+        //     arguments[2] = 100;
+        //     console.log(x, y, z);
+        // }
+        // fn(1, 2, 3);
+    </script>
+</body>
+
+</html>

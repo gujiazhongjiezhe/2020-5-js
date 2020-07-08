@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、全局栈内存的销毁：一般情况下不销毁，除非关闭当前页面，整个作用域就都销毁了
+
+        // 2、私有栈内存：销毁，不销毁，不立即销毁
+
+
+        // 立即销毁
+        // function fn(){
+        //     var name = 'jinYu';
+        //     console.log(name);
+        //     // 作用域是否销毁
+        // }
+        // fn();
+        // fn();
+        //-------------------------------------------------------------
+        // 不销毁的栈内存
+        // 在当前作用域里产生一个引用值，并且被外界所接收(占用)
+
+        // function fn(){
+        //     var obj = {age:2}; // af0
+        //     return obj // af0
+        // }
+
+        // var res = fn(); // af0
+        // res.age
+
+
+        // let num = 1; // af0
+        // function fn(){
+        //     /* 
+
+        //      */
+        //     num = [1,2,3]; // af0
+        // };
+
+        // fn();
+        // console.log(num[0]);
+
+
+
+        // function fn(){
+        //     /* 
+        //      */
+        //     return {  // af0
+        //         age:1
+        //     }
+        // }
+
+        // var res = fn(); // af0
+
+        //-----------------------------------------------------
+        // 不立即销毁
+        // function fn() {
+        //     var a = 12;
+        //     return function() { // af0
+        //         console.log(a);
+        //     }
+        // }
+
+        // fn()() // ---->af0()
+        // 当fn函数的作用域执行完成之后不能立即销毁，以为他的返回值是一个函数，而且还得立即执行这个返回值，(如果fn销毁了，就找不到返回的那个函数了)
+
+        // 当外层大函数执行完成会之后，并不会立即销毁，他到等待里面的小函数执行完成之后，大函数在销毁
+
+
+        // function fn(){
+        //     return function(){ // af0
+        //         console.log(100);  
+        //         // return 100;
+        //     }
+        // }
+        // let res = fn()();
+        // 这种res最后接收的是里边的小函数的return值100，所以fn作用域销毁
+
+
+        /* 
+        fn = af0
+        f  = 
+         */
+
+        // function fn() { // af0
+        //     /* 
+        //     num = 100 101 102
+        //      */
+        //     var num = 100;
+        //     return function() { // af1
+        //         num++;
+        //         console.log(num);
+        //     };
+        // }
+        // let f = fn(); // af1
+        // f();  // 101
+        // f(); // 102
+        // console.log(num++);
+
+        // this
+
+        // 移动端 
+        // let和const
+    </script>
+</body>
+
+</html>

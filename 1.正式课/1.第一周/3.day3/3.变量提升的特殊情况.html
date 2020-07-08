@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、变量提升发生在等号的左边
+        // var a = function() {};
+
+        // 2、不管if条件是否成立，都要进行变量提升
+
+        /* 
+        num
+         */
+        // console.log(num); // un
+        // if (false) {
+        //     var num = 12;
+        // }
+        // console.log(num); // un
+
+
+        /* 
+        fn
+         */
+        // console.log(fn); // un
+        // if (false) {
+        //     // 在新版本浏览器中，if条件里的带function的只声明不定义，但是条件一旦成立，所做的第一件事就是给函数名进行赋值
+        //     fn();
+        //     function fn() {};
+        // }
+        // console.log(fn); // un
+
+
+        /* 
+        fn = af0
+            */
+        // console.log(fn); // un
+        // if (true) {
+        //     // 在新版本浏览器中，if条件里的带function的只声明不定义，但是条件一旦成立，所做的第一件事就是给函数名进行赋值
+
+        //     // 如果是老版本浏览器，if条件里的函数既声明又定义
+        //     fn();
+        //     function fn() {}; // af0
+        // }
+        // console.log(fn); // af0
+
+        //------------------------------------------
+
+        // console.log(a);
+        // if (!('a' in window)) {
+        //     var a = 13
+        // }
+
+        // console.log(a);
+
+        // in :他是检测一个对象中有没有某个属性，如果有，就返回true，如果没有就返回false
+
+        // let obj = {
+        //     age: 23
+        // }
+        // console.log('age' in obj); // true
+        // console.log('a' in obj); // false
+
+        //3、 var和function给window增加键值对的过程是在变量提升阶段产生的
+
+        /* 
+        a = 13
+        在变量提升阶段不仅声明，还会，给window增加属性名a
+         */
+        // console.log(a); // un
+        // if ('a' in window) {
+        //     var a = 13;
+        // }
+        // console.log(a); // 13
+        //---------------------------------------------------------
+        // 4、函数里虽然return下面的代码不在执行，但是要进行变量提升
+
+        // function fn(){
+        //     /* 
+        //     ss
+        //      */
+        //     console.log(ss); // un
+        //     return;
+        //     var ss =10; 
+        // }
+        // fn();
+
+        //---------------------------------------------------------
+        // 5、自执行函数不进行变量提升
+        // (function(){}())
+        // (function(){})()
+
+        // var a = function() {};
+
+        // function fn(){
+        // }
+
+
+
+        // var s = (function() {})();
+        // console.log(s); // un
+
+        /* 
+        obj
+         */
+        // var obj = {
+        //     // 这个自执行函数是在存储键值对的时候执行的
+        //     fn: (function() {
+        //         /* 
+        //          */
+        //         console.log(999);
+        //         return function() {
+        //             console.log(6000);
+        //         }
+        //     })()
+        // }
+
+        // console.log(obj.fn);
+        // 怎样才能让6000输出
+        // obj.fn()
+        // obj.fn()
+        // obj.fn()
+        // obj.fn()
+
+        // function fn(){
+
+        // }
+        // fn()
+        // fn()
+        // fn()
+
+        // var a = (function() {})(); // 在给a赋值的时候就会执行
+
+        // (function(num){
+        //     console.log(num); // 123456
+
+        // })(123456)
+
+
+        /* 
+        a = 12
+        b = 12 13
+        fn = af0
+        */
+        // console.log(a, b); // un un 
+        // var a = 12,
+        //     b = 12;
+
+        // function fn() { // af0
+        //     /* 
+        //     a =13
+        //      */
+        //     console.log(a, b); // un 12
+        //     var a = b = 13; // var a = 13; b = 13
+        //     console.log(a, b); // 13 13
+        // }
+        // fn();
+        // console.log(a, b); // 12  13
+    </script>
+</body>
+
+</html>

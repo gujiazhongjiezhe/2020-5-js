@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 语法解析：发生在代码执行会之前
+        // 变量提升：在当前作用域下，代码执行之前，浏览器会对当前作用域中带var的和带function进行提前的声明(创建)和定义(赋值)；带var只会声明，不会定义；带function既声明又定义
+
+        // console.log(a); // un
+        // var a = 12; // a = 12
+        // console.log(a); // 12
+
+        /* 
+        a
+         */
+        // console.log(b); // // b is not defined
+        // var a = 12; // 不仅会给window增加键值对，还会有变量提升
+        // b = 13; // 只会给window增加键值对
+
+        // console.log(a,b);
+
+        /* 
+        a
+         */
+        // console.log(a); // un
+        // console.log(b); // un 报错
+        // var a = b = c = 100;
+        // var a = 10; 
+        // b = 10;
+        // c = 10;
+
+
+        /* 
+        a
+        b
+        c = 10
+         */
+        // console.log(a); // un
+        // console.log(b); // un
+        // console.log(c); // un
+        // var a, b, c = 10;
+        // // var a;
+        // // var b;
+        // // var c = 10;
+        // console.log(a); // un
+        // console.log(b); // un
+        // console.log(c); // 10
+        //----------------------------------------------------------------------------------
+        // 变量提升：在当前作用域下，代码执行之前，浏览器会对当前作用域中带var的和带function进行提前的声明(创建)和定义(赋值)；带var只会声明，不会定义；带function既声明又定义
+        // var num = 10;
+
+        // function fn() {
+        //     console.log(num); // 12 un
+        //     var num = 12;
+        //     // return num // 12
+        // }
+        // fn();
+        // console.log(num); // 10
+
+
+        // function fn() {}
+        // var fn = 12;
+        // console.log(fn);
+
+
+
+
+        /* 
+        name = 'jinYu';
+        fn = af0;
+         */
+        // var name = 'jinYu';
+        // function fn(name) {  // af0
+        //     /* 
+        //         name = 'jinYu'  af1
+        //      */
+        //     console.log(name); //  function
+        //     function name() {}; // af1
+        //     console.log(name); // function
+        // };
+        // fn(name);
+
+
+        /* 
+        fn = af0 af1 af2  af3  af4
+        */
+        // fn(); // 5
+        // function fn() { // af0
+        //     console.log(1);
+        // };
+        // fn(); // 5
+        // function fn() { // af1
+        //     console.log(2);
+        // };
+        // fn(); // 5
+        // var fn = function() { // af4
+        //     console.log(3);
+        // };
+        // fn(); // 3
+        // function fn() { // af2
+        //     console.log(4);
+        // };
+        // fn(); // 3
+        // function fn() { // af3
+        //     console.log(5);
+        // };
+
+
+
+        // 作用域链
+        // 在作用域中使用一个变量，先看自己有没有，如果自己有使用自己的，如果没有就往上一级作用域查找，如果上一级还没有，就往上一级的上一级进行查找，知道找到全局作用域为止，如果全局作用域还没有，就该报错了，这种一级一级查找的机制就是作用域链机制
+
+        // 上一级作用域：上一级作用域在函数创建的时候就已经确定了，就是说函数在哪创建的，那他的上一级作用域就是谁
+
+        // let num = 1; // 全局变量
+
+        // function fn() {
+        //     // 形成一个fn的私有作用域
+        //     let s = 100;
+
+        //     function f() { // af1
+        //         console.log(num, s);
+        //     }
+        //     return f; // af1
+        // }
+        // let f = fn(); // af1
+        // f();
+    </script>
+</body>
+
+</html>
