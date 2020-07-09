@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">点击</div>
+    <script>
+        // this
+        // this是js里的关键字，在js里有特殊的意义
+        // 他是函数的执行主体，谁执行的函数，那this就是谁
+
+
+        // 1、在全局作用域下，this是window
+        // 2.函数执行时，看执行函数前有没有点，如果有点，那点前面是谁，函数里的this就是谁，如果没有点，那函数里的this就是window
+        // 3.自执行函数里的this是window
+        // 4.给元素的事件行为绑定方法，那方法里的this就是当前被绑定的元素本身
+        // 5.回调函数里的this是window
+
+
+
+
+
+        // 1、在全局作用域下，this是window
+        // console.log(this === window); // true
+        // window.a = 12;
+        // console.log(this.a); // 12
+        //--------------------------------------------
+        // 2.函数执行时，看执行函数前有没有点，如果有点，那点前面是谁，函数里的this就是谁，如果没有点，那函数里的this就是window
+        //   function fn(){
+        //       console.log(this); // window
+
+        //   }
+        //   fn()
+
+        // var age = 18;
+        // let obj = {
+        //         age: 13,
+        //         fn: function() { // af0
+        //             console.log(this.age); // window.age  -->18
+        //         }
+        //     }
+        //     // obj.fn();
+
+        // var f = obj.fn; // af0
+        // f(); // af0()
+
+        //---------------------------------------------------
+        // 3.自执行函数里的this是window
+        // (function() {
+        //     console.log(this); // window
+        // })()
+
+        // ----------------------
+        // 4.给元素的事件行为绑定方法，那方法里的this就是当前被绑定的元素本身
+        // box.onclick = function() {
+        //     console.log(this); // box
+        // }
+
+        // 函数名()
+
+        // let box = document.getElementById('box'); // 元素对象
+
+        // 在私有作用域中产生一个引用值，而且被外界多接收
+        // (function() {
+
+        //     box.onclick = function() {
+        //         console.log(1111);
+        //     }
+        // })()
+
+        // let obj = {
+        //     fn: (function(name) { // 100 101
+
+        //         return function() {
+        //             name++
+        //             console.log(name); // 101
+        //         }
+        //     })(100)
+        // }
+
+        // obj.fn()
+        // obj.fn()
+        // let f = obj.fn;
+        // f()
+        // console.log(obj.fn);
+
+        //--------------------------------
+
+        // 5.回调函数里的this一般情况下是window
+        // function fn(f) {
+        //     f()
+        // }
+        // fn(function() {
+        //     console.log(this); // window
+        // });
+
+        // setTimeout(function() {
+        //     console.log(this); // window
+
+        // }, 1000);
+        // let ary = [100, 200, 300, 400];
+        // ary.forEach(function() {
+        //     console.log(this);
+        // })
+
+        // function fn(f) {
+        //     let obj = {};
+        //     obj.fn = f;
+        //     obj.fn();
+        // }
+        // fn(function() {
+        //     console.log(this)
+        // })
+
+        children
+    </script>
+</body>
+
+</html>
