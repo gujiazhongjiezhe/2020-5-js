@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+                                                                                                                                                                                f =  function () { return false; }
+                                                                                                                                                                                g = function () { return false; }
+                                                                                                                                                                                 */
+        // f = function() {
+        //     return true;
+        // };
+        // g = function() {
+        //     return false;
+        // };
+        // ~ function() {
+        //     /* 
+        //     g = function () { return true; }
+        //      */
+        //     if (g || [] == ![]) {
+        //         f = function() {
+        //             return false;
+        //         };
+
+        //         function g() {
+        //             return true;
+        //         };
+        //     }
+        // }();
+        // console.log(f()); // false
+        // console.log(g()); // false
+
+        //----------------------------------------------------------------
+
+        // var i = 2; // 4 3 2 4 3
+        // function fn() {
+        //     /* 
+        //     作用域不销毁
+        //      */
+        //     i += 2;
+        //     return function(n) {
+        //         /* 
+        //         n = 3
+        //          */
+        //         console.log(n + (--i)) // 3 + 2
+        //     };
+        // }
+        // var f = fn();
+        // f(); // NaN
+        // f(3); // 5
+        // fn()(2); // 5
+        // console.log(i); // 3
+
+
+        // function fn() {
+        //     /* 
+        //     作用域不立即销毁
+        //      */
+        //     i += 2;
+        //     return function (n) {
+        /* 
+        n =2
+         */
+        //         console.log(n + (--i)) // 2+3
+        //     };
+        // }
+
+        //----------------------------------------------------
+        /* 
+        num = 1
+        obj = af0
+        f = af1
+         */
+        // var num = 1; // 2 4
+        // var obj = { // af0
+        //     num: 2, // 4
+        //     fn: (function() {
+        //         // 这个自执行函数是在存储键值对的时候执行的，而且只会执行一次
+        //         // 作用域不销毁
+        //         /* 
+        //         num = un NaN 1 3 4 6 7
+        //          */
+        //         this.num *= 2; // window.num*=2
+        //         num += 3; // un+3
+        //         var num = 1;
+        //         return function() { // af1
+        //             /* 
+        //             作用域销毁
+        //              */
+        //             num += 2;
+        //             this.num += 2; // obj.num+=2
+        //             console.log(++num); // 7
+        //         }
+        //     })()
+        // };
+        // var f = obj.fn; //  af1
+        // f(); // 4 (函数里的this是window)
+        // obj.fn(); // 7 (函数里的this是obj)
+        // console.log(window.num, obj.num); // 4 4
+        // // 先创建函数，然后马上让函数执行
+        // console.log(200);
+
+        //------------------------------------------------------
+
+        /* 
+        num = 10 // 20 30
+        obj = af0
+        fn = af1
+         */
+        // var num = 10;
+        // var obj = {
+        //     num: 15 // 30
+        // }; // af0
+        // obj.fn = (function(num) { // 给obj新增键值对
+        //     /* 
+        //     num = 15 // 30 29 28
+        //     自执行函数的作用域不销毁
+        //      */
+        //     this.num += 10; // window.num+=10
+        //     // 自执行函数的this是window
+        //     num *= 2; // 
+        //     return function(n) { // af1
+        //         /* 
+        //         n = 15
+        //          */
+        //         this.num += n; // obj.num+=15
+        //         // this-->obj
+        //         console.log(n + (--num)); // 15 + 28
+        //     }
+        // })(obj.num); // 15
+        // var fn = obj.fn;
+        // fn(10); // 39
+        // obj.fn(15); // 43
+        // console.log(window.num, obj.num); // 30 30
+
+
+        // 形成私有作用域
+        // 形参赋值
+        // 变量提升
+        // 代码执行
+        // 作用域是否销毁
+        //-------------------------------------------------------
+
+        /* 
+        a = 1 1 3
+        obj1 = af0
+        fn1 = af1
+         */
+        // var a = 1;
+        // var obj1 = { // af0
+        //     a: 0, // 2
+        //     fn1: (function(a) {
+        //             /* 
+        //             a = 1 2 3 4
+        //             作用域不销毁
+        //              */
+        //             this.a = a; // window.a = 1
+        //             a++;
+        //             return function() { // af1
+        //                 /* 
+
+        //                  */
+        //                 this.a = a++; // window.a = 3
+        //                 console.log(a) // 4
+        //             }
+        //         })(a) // 1
+        // };
+        // obj1.fn1(); // 3
+        // var fn1 = obj1.fn1; // af1
+        // fn1(); // 4
+        // console.log(a); // 3
+        // console.log(obj1.a); // 2
+
+        //------------------------------------------------------------
+        /* 
+        number = 2 4 8
+        obj = af0
+        fn1 = af1
+         */
+        // var number = 2;
+        // var obj = { // af0
+        //     // number: 4, // 8
+        //     fn1: (function() {
+        //         /* 
+        //          number = NaN  3 9 27
+        //          作用域不销毁
+        //         */
+        //         this.number *= 2; // window.number*=2
+        //         number = number * 2; // un*2=>NaN
+        //         var number = 3;
+        //         return function() { // af1
+        //             /* 
+
+        //              */
+        //             this.number *= 2; // obj.number*=2
+        //             number *= 3;
+        //             alert(number);
+        //         }
+        //     })()
+        // };
+        // var fn1 = obj.fn1; // af1
+        // alert(number); // '4'
+        // fn1(); // 9
+        // obj.fn1(); // 27
+        // alert(window.number); // 8
+        // alert(obj.number); // 8
+        //-----------------------------------------------------
+
+        /* 
+        num = 1 4 14
+        obj = af0
+        fn = af1
+         */
+        // var num = 1;
+        // var obj = { // af0
+        //     num: 2 // 22
+        // };
+        // obj.fn = (function(num) {
+        //     /* 
+        //     num = 2 3 4 5
+        //     作用域不销毁
+        //      */
+        //     this.num = num * 2; // window.num = num*2
+        //     num++;
+        //     return function(n) { // af1
+
+        //         /* 
+        //         n = 20
+        //          */
+        //         this.num += n; // obj.num+=20
+        //         num++;
+        //         console.log(num)
+        //     }
+        // })(obj.num);
+        // var fn = obj.fn;
+        // fn(10); // 4
+        // obj.fn(20); // 5
+        // console.log(num, obj.num); // 14 22
+
+        // g ||  [] == ![]
+        // 数组 == false
+        // 0 == 0
+
+        // if(undefined || 1){
+        //     // 左右两边，有一个是true，那条件就成立
+        // }
+        // if(undefined && 1){
+        //     // 左右两边全部是true，那最后条件才会成立
+        // }
+
+        // let obj = null;
+        // let obj = {
+        //     // ary:[100,200,300,400]
+        // }
+
+        // // obj.ary.forEach(function(){
+
+        // // })
+
+        // obj && obj.ary && obj.ary.forEach()
+
+
+
+        //     let obj = {}
+        //     // let obj = {
+        //     //     ary:[100,200,300,400]
+        //     // }
+        //   let item =   obj.ary || []
+        //   item.forEach();
+    </script>
+</body>
+
+</html>

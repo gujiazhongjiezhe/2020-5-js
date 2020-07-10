@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 单例设计模式
+        // 假设在很早以前js的数据类型只有基本数据类型，没有引用(普通对象)数据类型
+
+        // var name = 'wuYouXiong';
+        // var age1 = 18;
+
+        // var name = 'liujinSheng';
+        // var age2 = 18;
+
+        // let person1 = {
+        //     name:'wuYouXiong',
+        //     age:18,
+        //     sex:'boy'
+        // };
+
+        // let person2 = {
+        //     name:'liujinSheng',
+        //     age:18,
+        //     sex:'boy'
+        // };
+        // 把描述当前事物特征的信息进行分组和归类，(减少全局变量的污染) ==>这就是js中的单例模式
+
+        // 把描述当前事物特征的信息放到某一个命名空间下进行分组和归类，防止全局变量的污染
+
+        // 为了让单例模式看起来逼格更高一些，就有了高级单例模式
+        // let name = 'qqqqq';
+        // let nameSpace = (function(){
+        //     let name = 'xxxx';
+        //     function fn(){
+        //         // 这是一个方法
+        //     }
+        //     function queryUrlParams(){
+
+        //     }
+
+        //     return {
+        //         name:name,
+        //         age:18,
+        //         fn:fn
+        //     }
+        // })();
+
+        // nameSpace.fn()
+
+        // nameSpace.queryUrlParams()
+        // function fn(){
+        // }
+
+        // 你们小组要开发项目
+
+        // 小明负责头部
+        // 小王负责中间内容部分
+        // 老王负责底部内容输入部分
+
+
+
+        // let xiaoMing = (function () {
+        //     let a = 10;
+        //     let b = 20;
+        //     function fn() {
+
+        //     };
+        //     return {
+        //         fn: fn,
+        //         a:a
+        //     }
+        // })()
+
+        // xiaoMing.fn();
+        // xiaoMing.a;
+
+        // let xiaoWang = (function () {
+        //     let a = 100;
+        //     let b = 201;
+        //     function fn() {
+
+        //     };
+        //     return {
+
+        //     }
+        // })()
+
+        // (function(){
+
+
+        // })()
+    </script>
+</body>
+
+</html>

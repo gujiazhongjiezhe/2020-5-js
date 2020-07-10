@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 高级单利模式应用
+        // let utils = (function(){
+        //         function addZero(value){
+        //             if(value<10){
+        //                 return '0'+value
+        //             }
+        //             else {
+        //                 return value
+        //             }
+        //         };
+        //         function sum(n,m){
+        //             return n+m;
+        //         };
+
+        //         return {
+        //             addZero:addZero,
+        //             sum:sum
+        //         }
+        // })()
+
+
+        // utils.addZero(1); // '01'
+        // utils.sum(1,2); // 3
+        // function sum(){
+
+        // }
+
+        // -------------------------------------------------------------
+        // 工厂模式
+
+
+        // let person1 = {
+        //     name:1,
+        //     age:18
+        // };
+
+        // let person2 = {
+        //     name:1,
+        //     age:18
+        // }
+
+        // 函数就该出现了，把录入个人信息的功能封装到函数里，以后想执行这个功能，就直接执行函数就好了
+        // 低耦合：减少代码的冗余
+        // 高内聚：提高代码的复用率
+
+
+        function craetePerson(name, age) {
+            let obj = {};
+            obj.name = name;
+            obj.age = age;
+            obj.country = 'China';
+            return obj;
+        }
+        let person1 = craetePerson('xiaoMing', 18); // {}
+        let person2 = craetePerson('xiaoWang', 24);
+    </script>
+</body>
+
+</html>
