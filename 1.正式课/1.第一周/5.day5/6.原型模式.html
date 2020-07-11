@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数模式解决的是实例的私有属性问题
+        // 原型模式解决的是实例的共有属性的问题
+
+        let ary = [100, 200, 300];
+        console.log(Array);
+
+        function Fn(name, age) {
+            this.name = name;
+            this.age = age;
+            // this.say = function() {
+            //     console.log('哈哈');
+            // }
+        }
+        Fn.prototype.say = function() {
+            console.log('哈哈');
+        }
+        Fn.prototype.ss = 100;
+
+        let f1 = new Fn('xiaoMing', 18);
+        let f2 = new Fn('laoWang', 24);
+        // // f1.__proto__.w = 100;
+
+
+
+        // // 给每一个实例都去增加一个方法
+        // function say() {
+        //     console.log('哈哈');
+        // }
+        // // console.log(f1);
+        // console.dir(Fn)
+
+        // Array.prototype.push = function() {
+        //     console.log('我们都是好孩子');
+        // }
+        // let ary = [100, 200];
+
+        Object.prototype.ss = 800;
+    </script>
+</body>
+
+</html>

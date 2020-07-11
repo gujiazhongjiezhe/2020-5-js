@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Fn(name, age) {
+            this.name = name;
+            this.age = age;
+            // 给当前实例增加私有属性
+
+            // 构造函数里的this是当前实例
+
+            return {}
+        }
+
+        let person1 = new Fn('shuKe', 18);
+        let person2 = new Fn('beiTa', 24);
+
+        // instanceof:检测当前实例是否属于某个类
+        // 实例 instanceof 类 如果当前实例是属于这个类的，那就返回true，否则返回false
+        // console.log(person1 instanceof Fn); // false
+        // 如果手动return一个引用值，那当前的返回值就不在是当前类的实例了
+
+
+        // 基本值在js中是存在特殊性的，
+        // 他们一定是当前类的实例，
+        // 缺陷： 因为咱们的instanceof只能检测对象类型的实例
+
+
+        // let num = 1;
+        // console.log(num instanceof Number); // false
+
+        // let ary = [1, 2, 3];
+        // console.log(ary instanceof Array); // true
+
+        // 在js中去创建实例是有两种方式的
+        // 1、字面量方式去创建(不是一个标准的实例)
+        // let num = 1;
+        // let str = '1';
+        // let ary = [1,2];
+
+        // 2、构造函数的方式去创建(是一个标准的实例)
+        // let num = new Number(1);
+        // console.log(num);
+
+
+        // let num = 1;
+        // console.log(num.toFixed(2));
+        // let num1 = new Number(1);
+        // console.log(num1.toFixed(2));
+        // console.log(num1 instanceof Number);
+
+
+        // let str = '123';
+        // str.substr()
+
+        // typeof 不能够检测对象  
+        // instanceof
+
+
+        // 构造函数
+        // NUmber
+
+        // let num = new Number(1);
+        // Number('1');
+    </script>
+</body>
+
+</html>

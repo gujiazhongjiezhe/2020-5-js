@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数模式
+        // 刚才你所看见的都是人家js的内置类
+        // js是给咱们留了自己去创建自定义类的方法的，用你自己创建的类去构造实例
+
+        // 创建个人信息
+
+        function CreatePerson(name, age) {
+            /* 
+            形成私有作用域
+            形参赋值
+            变量提升
+                默认生成一个空对象
+                让当前的this指向这个空对象
+            代码执行
+                默认把当前的this return出去
+            作用域是否销毁
+             */
+            this.name = name; // 
+            this.age = age;
+            this.sex = 'boy';
+            this.say = function() {
+                    console.log(1);
+                }
+                // this.xxx = xxx; 就是给当前实例增加私有属性
+                // 构造函数里的this就是当前正在创建的实例
+            return 1;
+        }
+
+
+        // Function类
+        //     类
+        //     普通函数
+
+        //   let person1 = CreatePerson('xiaoMing',18); // 普通函数执行 this -->window
+
+        let person1 = new CreatePerson('xiaoMing', 18); // {name:'xiaoMing',age:18,say:f}
+        let person2 = new CreatePerson('laoWang', 18); // {name:'laoWang',age:18,say:f}
+        let person3 = new CreatePerson;
+        console.log(person1.say === person2.say); // false
+
+        console.log(person1, person2, person3);
+
+        // new 函数名()这种方式叫做构造函数运行模式，此时的CreatePerson就已经是自定义类了，他的返回结果是一个对象，那这个对象就是当前类的实例【person1就是CreatePerson类的实例】
+
+        // 在这里咱们可以看出来，类是函数数据类型的，实例是对象数据类型的，构造函数里的this是当前类的实例
+
+        // Number   1 2 字面量方式去创建的实例  let num = 1
+
+
+        // 普通函数和构造函数之间的区别
+        // 1、运行上的区别
+        // 普通函数的运行:形成私有作用域-->形参赋值-->变量提升-->代码执行-->作用域是否销毁
+        // 构造函数的运行:形成私有作用域-->形参赋值-->变量提升-->默认生成一个空对象-->让当前作用域的this指向这个空对象-->代码执行-->默认把当前的this return 出去-->作用域是否销毁
+        // 2、执行上的区别
+        // 普通函数执行 ：函数名()
+        // 构造函数执行： new 函数名();如果构造函数执行不需要传实参，那这时候可以省略执行小括号
+
+        // 3、在构造函数中，如果手动return一个基本值，那不会对构造函数的返回值造成任何影响，但是如果手动return一个引用值，那构造函数的返回值就会发生改变，构造函数的返回值就被破坏了(此时的返回值已经不是当前类的实例了，所以不要轻易的在构造函数中return引用值)
+    </script>
+</body>
+
+</html>

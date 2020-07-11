@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Fn(n) {
+            /* 
+            n = 20
+            this = {}
+            m = 10
+             */
+            let m = 10;
+            this.total = m + n; // this.total = 30
+            this.say = function() {
+                console.log(this.total); // 
+            }
+            this.ss = 10;
+        };
+        // 构造函数里的私有变量和当前实例没有直接的关系，this和实例才有关系
+
+        let f1 = new Fn(10); // {total:20,say:f}
+        let f2 = new Fn(20); // {total:30,say:f}
+        let f3 = Fn(10); // un
+
+        console.log(f3); // un
+        console.log(f1.n); // un
+        console.log(f2.m); // un
+        console.log(f1.total); // 20
+        f2.say(); // 30
+        console.log(f1 === f2); // false
+
+
+
+
+        // 构造函数模式可以给实例增加私有属性
+
+
+        // let ary = [100, 200, 300, 400]; // 这是Array的实例  push pop splice slice
+
+        // console.log(ary);
+        // ary.push()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // hasOwnProperty :检测当前的属性是私有还是共有
+
+        // function Fn() {
+        //     this.name = 'xxx',
+        //         this.age = 18
+        // };
+        // Fn.prototype.ss = 100;
+        // let f1 = new Fn;
+        // console.log(f1);
+
+        // console.log(f1.hasOwnProperty('name')); // true
+        // console.log(f1.hasOwnProperty('ss')); // false
+        // // hasOwnProperty是用来专门检测当前的属性是共有还是私有，如果是私有就返回true，否则就返回false
+
+        // console.log(Fn.prototype.hasOwnProperty('ss')); // true
+
+        // console.log(Object.prototype.hasOwnProperty('hasOwnProperty')); // true
+        // 私有和共有是相对来说的，相对于自己来说就是私有，但是相对于下面的实例来说就是公有的
+
+        // in :检测当前属性是否属于某个对象(不管是私有还是共有，只要能找到就返回true)
+
+        // console.log('name' in f1); // true
+        // console.log('ss' in f1); // true
+
+        // 检测私有
+        // 检测私有和公有
+        // 检测公有
+
+        // function hasPublicProperty(value){
+        //     // this
+        //     // 1、检测当前属性是不是属于现在这个对象的 in 
+        //     // 2、然后在拿hasOwnProperty检测一下是不是私有属性，
+        // }
+
+        // Object.prototype.hasPublicProperty = hasPublicProperty; // 把当前封装的方法放到Object类的原型上
+
+
+        // pop 删除数组最后一项 返回值是删除的那一项
+
+        // function myPop() {
+        //     // this-->ary
+        //     let last = this[this.length - 1]; // 获取数组最后一项
+        //     this.length--;
+        //     return last;
+        // }
+
+        // Array.prototype.myPop = myPop;
+
+        // let ary = [100, 200, 300, 400]; // af0
+        // console.log(ary.myPop());
+        // console.log(ary);
+    </script>
+</body>
+
+</html>

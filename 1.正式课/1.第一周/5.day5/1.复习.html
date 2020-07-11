@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="box">
+        <li id="w">1</li>
+
+        <li>2</li>
+        <!--  -->
+        <li>3</li>
+        <!--  -->
+        <li id="flag">4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // var i = 5;
+
+        // function fn(i) { // 3 4 5
+        //     /* 
+        //      */
+        //     return function(n) {
+        //         /* 
+        //         n = 2
+        //          */
+        //         console.log(n + (++i)); // 7
+        //     }
+        // }
+        // var f = fn(3);
+        // f(4); // 8
+        // fn(3)(6); // 10
+        // f(2); // 7
+        // console.log(i); // 5
+
+
+        // function fn(i) { // 3 4
+
+        //     return function (n) {
+        //         /* 
+        // n = 6
+        //         */
+        //         console.log(n + (++i)); // 10
+        //     }
+        // }
+
+        //--------------------------------------------------
+        // var n = 20; // 21  22 24
+
+        // function outer() {
+        //     /* 
+
+        //      */
+        //     ++n;
+
+        //     function inner() {
+        //         /* 
+
+        //          */
+        //         console.log(n++); // 21
+
+        //         function center() {
+        //             /* 
+
+        //              */
+        //             n += 2;
+        //             console.log(n); // 24
+        //         }
+        //         center();
+        //     }
+        //     inner();
+        // };
+        // outer();
+        // console.log(n) // 24
+        //--------------------------------------------
+        // let flag = document.getElementById('flag');
+        // let w = document.getElementById('w');
+
+        // function prev(ele) {
+        //     // 获取ele的哥哥节点
+        //     let pre = ele.previousSibling; // 假设现在获取的就是元素节点
+        //     // if (!pre) {
+        //     //     return null;
+        //     // }
+        //     // 如果获取的哥哥节点的npodeType不是1，说明此节点不是元素节点，要继续获取当前节点的上一个哥哥节点，(不断的循环和获取上一个哥哥节点，直到获取的节点的nodeType为1为止，)
+        //     while (pre.nodeType !== 1) {
+        //         // 继续获取当前pre的上一个哥哥节点
+        //         pre = pre.previousSibling;
+        //     };
+        //     return pre;
+
+        // };
+
+        // let res = prev(w); // ele是一个元素节点，函数的返回值是ele的哥哥元素节点
+
+        //-------------------------------------------------------------
+        // let box = document.getElementById('box');
+        // // children获取当前元素里的所有元素子节点
+        // // childNodes：获取当前元素里的所有子节点
+        // function chils(ele) {
+        //     let childs = ele.childNodes; // 先获取到所有的子节点 [li,text,commemt]
+        //     let ary = [];
+        //     for (var i = 0; i < childs.length; i++) {
+        //         if (childs[i].nodeType === 1) {
+        //             ary.push(childs[i])
+        //         }
+        //     }
+        //     return ary;
+
+        // }
+
+        // console.log(chils(box));
+
+
+        //-----------------------------------------------
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Fn(x, y) {
+            this.x = x;
+            this.y = y;
+            this.getX = function() {
+                console.log(this.x);
+            }
+        }
+        Fn.prototype.getX = function() { // 给Fn的原型增加方法
+            return this
+        }
+        Fn.prototype.getY = function() { // 给Fn的原型增加方法
+            console.log(this.z); // 
+        };
+
+        var f1 = new Fn(300, 200); // {x:300,y:200,getX:f}
+        var f2 = new Fn(100, 200); // {x:100,y:200,getX:f}
+        f1.__proto__.x = 300; // 给Fn的原型增加属性
+        f1.__proto__.__proto__.z = 315; // 给Object类的原型增加属性
+        f2.r = 300; // 给自己增加私有属性
+
+        f1.x = "恭喜发财"; // 
+        f1.__proto__.eat = function() {
+            return this.z;
+        };
+
+
+        console.log(Fn.prototype.getX().x === f2.r);
+        console.log(f1.z);
+        console.log(Fn.prototype.__proto__.__proto__);
+        console.log(f2.eat());
+        console.log(Fn.prototype.getY());
+        f1.getX()
+    </script>
+</body>
+
+</html>
